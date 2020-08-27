@@ -32,6 +32,10 @@ Um alg. é **correto** (resolve o problema) se, para toda instância de entrada,
 - Alg. Recursivos: Utiliza-se a técnica de **indução matemática ** no tamanho das instâncias. 
 
 ## Consumo de Tempo
+Pense no tempo de execução de algoritmo como:
+- `uma função do tamanho da sua entrada`
+- `quão rapido essa função cresce dado o tamanho da entrada`
+
 Seja `T(n)` o consumo de tempo (no pior caso, ou melgor, ou caso médio) do algoritmo `A`, para instancias de tamanho `n`.
 
 Como pretendemos medir a ordem de grandeza da função de tempo do algoritmo. Precisamos de um modo para comparar funções que considere as suas **velocidade de crescimento**.
@@ -39,6 +43,8 @@ Como pretendemos medir a ordem de grandeza da função de tempo do algoritmo. Pr
 O - comparação com ideia de "<="
 Θ -  comparação com ideia de ">=" 
 Ω -  comparação com ideia de "= "
+
+### Instruções Simples x Complexas
 
 ### Notação O
 `O(f(n))` intuitivamente são funções que não crescem mais rápido que `f(n)`
