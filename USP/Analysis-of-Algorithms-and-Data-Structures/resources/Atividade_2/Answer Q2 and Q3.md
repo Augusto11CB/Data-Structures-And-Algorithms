@@ -22,6 +22,8 @@ senão s <-- SomaPositivos (A, n - 1)
 ## Q3
 **Algoritmos iterativos em geral possuem maior custo de memória que sua versão recursiva.**
 
-**Answer:** Essa afirmação é verdadeira, pois a cada chamada recursiva cria-se uma nova instância da função que será executada em um novo espaço de trabalho, e que por sua vez terá suas próprias variáveis, objetos, etc. 
+**Answer:** Essa afirmação é falsa, pois a cada chamada recursiva cria-se uma nova instância da função que será executada em um novo espaço de trabalho, e que por sua vez terá suas próprias variáveis, objetos, etc. 
 
 Portanto, como se cria, para cada chamada recursiva, uma nova "instancia" da função (ou em outras palavras um novo espaço de trabalho), isso faz com que o consumo de memória computacional seja maior. 
+
+Tal comportamento é diferente para algoritmos iterativos, que não expandem os "espaços de trabalho" realizando chamadas recursivas.
