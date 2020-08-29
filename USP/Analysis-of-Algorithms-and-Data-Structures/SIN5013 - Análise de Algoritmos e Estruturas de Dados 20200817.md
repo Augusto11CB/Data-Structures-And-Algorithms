@@ -26,4 +26,7 @@ Seja P(n) uma propriedade sobre o numero natural n>=n0, sendo n0 um numero natur
 1 - **Passo base**: A propriedade é valida para n=n0;
 2 - **Passo indutivo:** 
 	v1 - Para k>n0, *se a propriedade é valida para todo n0<=n<=k*, então é valida para n=k+1
+
+https://ibb.co/ypDwycM
+https://ibb.co/TW7dv1h
 	
