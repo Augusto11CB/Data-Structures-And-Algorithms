@@ -20,7 +20,8 @@ function insertionSort(myArray, arrayLength) {
     console.log(`[Starting insertionSort] 
                     myArray: ${myArray}  
                     arrayLength: ${arrayLength}\n`
-                )
+    )
+
     for (j = 1; j < arrayLength; j++) {
         let key = myArray[j];
 
@@ -35,24 +36,29 @@ function insertionSort(myArray, arrayLength) {
         }
 
         myArray[index + 1] = key;
-        console.log(`[End "For" Iteration] Status myArray: ${myArray} - Index: ${index} - J: ${j}`)
+        console.log(`[End "For" Iteration] Status myArray: ${myArray} #Index: ${index} #J: ${j}`)
 
     }
 }
 
-let myArray = [6, 4, 2, 10, 9, 8, 15, 18, 12, 5];
+//let myArray = [4, 6, 2, 10, 9, 8, 15, 18, 12, 5];
+var myArray = [1,2,3,4,5,6,7,8,9,10];
 
 insertionSort(myArray, myArray.length);
 
 
-/* 
+/*
+
+Q5 - A quantidade de vezes que são executadas as linhas 6 e 7 do algoritmo ORDENA-POR-INSERÇÃO quando o vetor tem “n” elementos e está ordenado de forma crescente é
+Answer: 0
+
 Q4 - Em qualquer iteração do algoritmo ORDENA-POR-INSERÇÃO o sub-vetor da esquerda da posição “j” está desordenado.
 Answer: Falso
 
 Q3 - Em algum passo do algoritmo ORDENA-POR-INSERÇÃO para o vetor A = [4,6,2,10,9,8,15,18,12,5] e n=10, o vetor fica assim A = [2,4,6,8,9,10,12,15,18,5].
 Answer: Verdadeiro
- 
+
 Q2 - Depois da primeira iteração do algoritmo ORDENA-POR-INSERÇÃO para o vetor A = [4,6,2,10,9,8,15,18,12,5] e n=10, o vetor fica assim A = [6,4,2,10,9,8,15,18,12,5].
-Answer: Verdadeiro
+Answer: Falso
 
 */

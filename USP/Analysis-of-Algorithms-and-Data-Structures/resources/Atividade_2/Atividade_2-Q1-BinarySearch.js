@@ -28,11 +28,11 @@ let findIndex = function binarySearch(myArray, start, end, targetValue) {
 
 // Validation 
 
-let myArray = [1, 3, 4, 4, 6, 7];
+let myArray = [5];
 let start = 0;
 let end = myArray.length - 1;
 
-let index = findIndex(myArray, start, end, 6);
+let index = findIndex(myArray, start, end, 10);
 
 console.log(`bestIndex: ${index}`);
 
