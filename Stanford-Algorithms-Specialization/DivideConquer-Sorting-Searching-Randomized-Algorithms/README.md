@@ -31,9 +31,9 @@ is that f grows no faster than g. A bit more precisely, it says that f is at mos
 times greater than g, except maybe for small values of x. F
 
 #### Examples
-![Big-Oh-Notation-Activity_2](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/tree/master/Stanford-Algorithms-Specialization/DivideConquer-Sorting-Searching-Randomized-Algorithms/resources/Big-Oh-Notation-Activity_2.jpg)
+![Big-Oh-Notation-Activity_2](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/Stanford-Algorithms-Specialization/DivideConquer-Sorting-Searching-Randomized-Algorithms/resources/Big-Oh-Notation-Activity_2.jpg)
 
-![Big-Oh-Notation-Activity_1](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/tree/master/Stanford-Algorithms-Specialization/DivideConquer-Sorting-Searching-Randomized-Algorithms/resources/Big-Oh-Notation-Activity_1.jpg)
+![Big-Oh-Notation-Activity_1](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/Stanford-Algorithms-Specialization/DivideConquer-Sorting-Searching-Randomized-Algorithms/resources/Big-Oh-Notation-Activity_1.jpg)
 
 ### Omega Notation
 Formal Definition: T(n) = Omega(f(n)) if and only if exist constants c,n0 such that:
