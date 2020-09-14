@@ -21,19 +21,18 @@ O - comparação com ideia de "<="
 Exemplo: n^2 + 3n - 3 é  `O(n^2)`
 
 
-- TODO [Finish Lesson](https://youtu.be/ojCAnD7vrOY?list=PLxI8Can9yAHdNN5fpKWRF8bbLG-2P-0LW&t=717)
 
 ### Propriedades das Notações - Transitividade e Reflexividade
-![propriedades-notacoes-omega-teta-oh](resources/Images/propriedades-notacoes-omega-teta-oh.png)
+![propriedades-notacoes-omega-teta-oh](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/tree/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Images/propriedades-notacoes-omega-teta-oh.png)
 
-![propriedades-notacoes-omega-teta-oh-2](resources/Images/propriedades-notacoes-omega-teta-oh-2.png)
+![propriedades-notacoes-omega-teta-oh-2](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/tree/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Images/propriedades-notacoes-omega-teta-oh-2.png)
 
 ### Operações com Notação `O`
-![operacoes-notacao-oh](resources/Images/operacoes-notacao-oh.png)
+![operacoes-notacao-oh](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/tree/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Images/operacoes-notacao-oh.png)
 operacoes-notacao-oh
 
 ### Revisão Matemática
-![resivao-matematica](resources/Images/resivao-matematica.png)
+![resivao-matematica](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/tree/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Images/resivao-matematica.png)
 
 ### Exemplo - Ordenação-por-Inserção 
 Rearranjar um vetor A[1 .. n] de modo que ele fique em ordem crescente.
