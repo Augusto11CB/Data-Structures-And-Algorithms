@@ -9,10 +9,17 @@ Seja `T(n)` o consumo de tempo (no pior caso, ou melhor, ou caso médio) do algo
 
 Como pretendemos medir a ordem de grandeza da função de tempo do algoritmo. Precisamos de um modo para comparar funções que considere as suas **velocidade de crescimento**.
 
-O - comparação com ideia de "<="
-Θ -  comparação com ideia de ">=" 
-Ω -  comparação com ideia de "= "
+- O - comparação com ideia de "<="
+	> Definição: Dadas funções assintoticamente não-negativas f e g, dizemos que f  está na ordem Ο de  g e escrevemos f  = Ο(g) se existe um número [positivo](https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/dictionary.html#positive)  c tal que f(n)  **≤**  c · g(n) para todo n suficientemente grande. Em outras palavras, se existem números positivos c e n0 tais que f(n) ≤  c · g(n) para todo n maior que n0. 
 
+- Ω -  comparação com ideia de "= "
+	> Definição: Dadas funções [assintoticamente não-negativas](https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/Oh.html#asymptotically-nonnegative)  f e g, dizemos que f  está na ordem Ômega de  g e escrevemos f  = Ω(g) se existe um número positivo c tal que f(n)  **≥**  c · g(n) para todo n  [suficientemente grande](https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/dictionary.html#suficientemente).
+	
+- Θ -  comparação com ideia de ">=" 
+	> Definição: Dizemos que duas funções assintoticamente não negativas f e g  são da mesma ordem e escrevemos f  = Θ(g) se f  = Ο(g)  e  f = Ω(g). Trocando em miúdos, f  = Θ(g) significa que existe números positivos c e d tais que c g(n) ≤  f(n) ≤  d g(n) para todo n  [suficientemente grande](https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/dictionary.html#suficientemente). 
+
+fonte: [IME - Comparação assintótica de funções](https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/Oh.html)
+	
 ### Instruções Simples x Complexas
 
 ### Notação O
@@ -82,4 +89,12 @@ para j := 2 até n                //n
 
 **Somando os tempos temos:** (n^2 + 7n -8) / 2
 
+## Exemplos
 
+![demonstracao-consumo-tempo](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Imagens/demonstracao-consumo-tempo-1-20200907.png)
+
+![demonstracao-consumo-tempo](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Imagens/demonstracao-consumo-tempo-2-20200907.png)
+
+![demonstracao-consumo-tempo](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Imagens/demonstracao-consumo-tempo-3-20200907.png)
+
+![demonstracao-consumo-tempo](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Imagens/demonstracao-consumo-tempo-4-20200907.png)
