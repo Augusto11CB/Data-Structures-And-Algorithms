@@ -27,8 +27,6 @@ fonte: [IME - Comparação assintótica de funções](https://www.ime.usp.br/~pf
 
 Exemplo: n^2 + 3n - 3 é  `O(n^2)`
 
-
-
 ### Propriedades das Notações - Transitividade e Reflexividade
 ![propriedades-notacoes-omega-teta-oh](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Imagens/propriedades-notacoes-omega-teta-oh.png)
 
