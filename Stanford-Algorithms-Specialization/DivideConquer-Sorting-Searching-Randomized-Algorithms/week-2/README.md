@@ -75,3 +75,22 @@ d = 0
 
 
 ### Proof Master Method
+
+At each level j= 0,1,2, . . ., `log _b\(n)` there are `a^j` subproblems, each of size `n/b^j`.
+-	`log _b\(n)` is the number of times you can divide `n` by b before reaching 1;
+	-	level 0
+	-	level 1
+	-	level 2
+	-	..... ... ... ...
+	-	level `log _b\(n)` -> base level -> leaf
+
+#### Work at	a single level
+Total work at level `j` (ignoring work in recursive call).
+
+`<= a^j * c * (n/b^j)d` == `c * n^d * (a/n^d)^j`
+- `a^j` number of level-j subproblems
+- `n/b^j` size of each level-j subproblem  (-_-)
+- `c * ((-_-))^d` - work per level-k subproblem
+
+#### Total Work
+- TODO Add image total-work-master-method.png
