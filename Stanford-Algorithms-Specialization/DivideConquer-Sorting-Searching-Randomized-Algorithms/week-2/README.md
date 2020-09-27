@@ -21,7 +21,7 @@
 ```
 
 ### Master Method
-![master-method](master-method)
+![master-method](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/Stanford-Algorithms-Specialization/DivideConquer-Sorting-Searching-Randomized-Algorithms/week-2/resources/master-method.png)
 
 ### Example #1 - Mergesort
 ```js
@@ -93,4 +93,4 @@ Total work at level `j` (ignoring work in recursive call).
 - `c * ((-_-))^d` - work per level-k subproblem
 
 #### Total Work
-- TODO Add image total-work-master-method.png
+![Total work Done](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/Stanford-Algorithms-Specialization/DivideConquer-Sorting-Searching-Randomized-Algorithms/week-2/resources/total-work-master-method.png)
