@@ -14,11 +14,11 @@ Resolver uma recorrência é encontrar uma **fórmula fechada que dê o valor da
 Consiste em expandir, isto é, iterar a recorrência e escrevê-la como uma somatória de termos que dependem apenas de `n`.
 
 #### Exemplo 1
-Recorrência: F(n) = F(n/2) + 3
+**Recorrência**: F(n) = F(n/2) + 3
 
 > A recorrência faz sentido se n pertence ao conjunto {2^ 1, 2^ 2, 2^3}, pois não faz sentido tomar n no conjunto {2, 3, 4, 5, … } pois n/2 não pertence a esse conjunto quando n é ímpar.
 
-Nova Recorrência: F(2k) = F(2k−1) + 3
+**Nova Recorrência**: F(2k) = F(2k−1) + 3
 
 Obtendo a fórmula fechada através do método da iteração:
 
@@ -40,7 +40,7 @@ F(n) = 5 + 3 lg n.
 - TODO
 
 #### Exemple 4
-![metodo-iteracao-ex1](metodo-iteracao-ex1.png)
+![metodo-iteracao-ex1](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Imagens/metodo-iteracao-ex1.png)
 
 ### Árvore de recorrencia 
 Neste método, desenhamos uma árvore de recorrência e calculamos o tempo gasto por cada nível da árvore. Por fim, somamos o trabalho realizado em todos os níveis. Para desenhar a árvore de recorrência, partimos da recorrência dada e continuamos desenhando até encontrar um padrão entre os níveis. O padrão é normalmente uma série aritmética ou geométrica.
@@ -88,7 +88,7 @@ log4_n	     c(n/4)^2   c(n/4)^2   c(n/4)^2 ------------- 3/16*c*n^2
 	- nivel 2 -> temos 9 nós
 	- nivel log4_n (ultimo nivel da arvore) -> temos `3^(log4_n)`
 
-![metodo-arvore-exemplo1](metodo-arvore-exemplo1.png)
+![metodo-arvore-exemplo1](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Imagens/metodo-arvore-exemplo1.png)
 
 #### Exemplo xyz
 
@@ -108,7 +108,7 @@ O método começa com um "chute" para o valor de T(n).
 
 Após isso, é demonstrado por  **indução** que o "chute" está certo.
 
-![metodo-substituicao-exemplo1](metodo-substituicao-exemplo1.png)
+![metodo-substituicao-exemplo1](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Imagens/metodo-substituicao-exemplo1.png)
 
 ## References
 [Recorrência - IME USP](https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/recurrence.html)
