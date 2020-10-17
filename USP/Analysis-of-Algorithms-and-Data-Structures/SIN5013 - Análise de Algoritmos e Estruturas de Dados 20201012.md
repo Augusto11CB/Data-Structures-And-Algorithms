@@ -41,7 +41,7 @@ O rótulo da raiz da árvore corresponde à primeira comparação efetuada pelo 
 
 ##### Exemplo Árvore Decisão
 
-![exemplo-arvore-decisao](exemplo-arvore-decisao.png)
+![exemplo-arvore-decisao](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Imagens/exemplo-arvore-decisao.png)
 
 Cada uma das 3!=6 permutações aparece nas folhas. Espera-se o mesmo para um n arbitrário.
 
@@ -59,7 +59,7 @@ n! ≤ número de folhas ≤ 2h
 ```
 
 #### Prova da Cota Inferior
-![prova-cota-inferior](prova-cota-inferior.png)
+![prova-cota-inferior](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Imagens/prova-cota-inferior.png)
 
     T(n) é Ω(nlogn)
 
@@ -90,17 +90,17 @@ O algoritmo usa um vetor auxiliar C para contar quantos números têm de cada um
 ```js
 COUNTING-SORT (A, B, n, k)
 1 para i ← 0 até k faça                  Θ(k)
-2     C[i] ← 0 							 Θ(k)
-3 para j ← 1 até n faça					   Θ(n)
-4     C[A[j]] ← C[A[j]] + 1                Θ(n)
+2     C[i] ← 0 				 Θ(k)
+3 para j ← 1 até n faça			 Θ(n)
+4     C[A[j]] ← C[A[j]] + 1              Θ(n)
 5 para i ← 1 até k faça                  Θ(k)
 6     C[i] ← C[i] + C[i − 1]             Θ(k)
                                   //acumulamos os números em C. Assim, C[i] terá o número de elementos da 
-								 //entrada que são menores que ou iguais a i.
-7 para j ← n decrescendo até 1 faça         Θ(n)
-8     B[C[A[j]]] ← A[j]						Θ(n)
-9     C[A[j]] ← C[A[j]] − 1					Θ(n)
-										TOTAL = Θ(k+n)
+				 //entrada que são menores que ou iguais a i.
+7 para j ← n decrescendo até 1 faça      Θ(n)
+8     B[C[A[j]]] ← A[j]			 Θ(n)
+9     C[A[j]] ← C[A[j]] − 1		 Θ(n)
+					TOTAL = Θ(k+n)
 ```
 
 **Array A**
@@ -128,15 +128,15 @@ Suponha que sabemos que os elementos que desejamos ordenar têm **d dígitos**.
 
 A ideia básica é **ordenar em função dos dígitos**, um de cada vez, **começando pelo dígito menos significativo**. Desse modo, apenas d passagens pela lista são necessárias para fazer a ordenação.
 
-![enter image description here](radixsort-example.png)
+![enter image description here](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Imagens/radixsort-example.png)
 
 ### Pseudo-código
 ```js
 RADIX-SORT (A, n, d)
 1 para i ← 1 até d faça            Θ(d)
 2 ordene A[1 . . n] pelo dígito i  Θ(d(n+k)) // Se cada dígito está no intervalo de 0 a k-1 
-								             // e k não é muito grande podemos usar a ordenação por contagem.
-								   TOTAL: Se d é uma constante e k=O(n), Radixsort é linear.
+					    // e k não é muito grande podemos usar a ordenação por contagem.
+			           TOTAL: Se d é uma constante e k=O(n), Radixsort é linear.
 ```
 
 ### Consumo de Tempo 
@@ -150,7 +150,13 @@ Suponha que sabemos que os elementos que desejamos ordenar foram gerados aleator
 - Distribuir os n números entre os buckets.
 - Ordenar os números em cada bucket usando ordenação por inserção.
 
+### Pseudo-código
+- TODO
+
 ### Consumo de Tempo 
 Se as entradas forem uniformemente distribuídas, então o número esperado de elementos em cada bucket é Θ (1). Logo o consumo de tempo esperado para ordenar cada bucket é Θ(1).
  
 Logo, o consumo de tempo do Bucketsort é Θ(n).
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNjg2MjA4Njc1XX0=
+-->
