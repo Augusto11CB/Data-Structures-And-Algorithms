@@ -90,17 +90,17 @@ O algoritmo usa um vetor auxiliar C para contar quantos números têm de cada um
 ```js
 COUNTING-SORT (A, B, n, k)
 1 para i ← 0 até k faça                  Θ(k)
-2     C[i] ← 0 							 Θ(k)
-3 para j ← 1 até n faça					   Θ(n)
-4     C[A[j]] ← C[A[j]] + 1                Θ(n)
+2     C[i] ← 0 				 Θ(k)
+3 para j ← 1 até n faça			 Θ(n)
+4     C[A[j]] ← C[A[j]] + 1              Θ(n)
 5 para i ← 1 até k faça                  Θ(k)
 6     C[i] ← C[i] + C[i − 1]             Θ(k)
                                   //acumulamos os números em C. Assim, C[i] terá o número de elementos da 
-								 //entrada que são menores que ou iguais a i.
-7 para j ← n decrescendo até 1 faça         Θ(n)
-8     B[C[A[j]]] ← A[j]						Θ(n)
-9     C[A[j]] ← C[A[j]] − 1					Θ(n)
-										TOTAL = Θ(k+n)
+				 //entrada que são menores que ou iguais a i.
+7 para j ← n decrescendo até 1 faça      Θ(n)
+8     B[C[A[j]]] ← A[j]			 Θ(n)
+9     C[A[j]] ← C[A[j]] − 1		 Θ(n)
+					TOTAL = Θ(k+n)
 ```
 
 **Array A**
@@ -135,8 +135,8 @@ A ideia básica é **ordenar em função dos dígitos**, um de cada vez, **come�
 RADIX-SORT (A, n, d)
 1 para i ← 1 até d faça            Θ(d)
 2 ordene A[1 . . n] pelo dígito i  Θ(d(n+k)) // Se cada dígito está no intervalo de 0 a k-1 
-								             // e k não é muito grande podemos usar a ordenação por contagem.
-								   TOTAL: Se d é uma constante e k=O(n), Radixsort é linear.
+					    // e k não é muito grande podemos usar a ordenação por contagem.
+			           TOTAL: Se d é uma constante e k=O(n), Radixsort é linear.
 ```
 
 ### Consumo de Tempo 
