@@ -150,7 +150,13 @@ Suponha que sabemos que os elementos que desejamos ordenar foram gerados aleator
 - Distribuir os n números entre os buckets.
 - Ordenar os números em cada bucket usando ordenação por inserção.
 
+### Pseudo-código
+- TODO
+
 ### Consumo de Tempo 
 Se as entradas forem uniformemente distribuídas, então o número esperado de elementos em cada bucket é Θ (1). Logo o consumo de tempo esperado para ordenar cada bucket é Θ(1).
  
 Logo, o consumo de tempo do Bucketsort é Θ(n).
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNjg2MjA4Njc1XX0=
+-->
