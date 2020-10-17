@@ -41,7 +41,7 @@ O rótulo da raiz da árvore corresponde à primeira comparação efetuada pelo 
 
 ##### Exemplo Árvore Decisão
 
-![exemplo-arvore-decisao](exemplo-arvore-decisao.png)
+![exemplo-arvore-decisao](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Imagens/exemplo-arvore-decisao.png)
 
 Cada uma das 3!=6 permutações aparece nas folhas. Espera-se o mesmo para um n arbitrário.
 
@@ -59,7 +59,7 @@ n! ≤ número de folhas ≤ 2h
 ```
 
 #### Prova da Cota Inferior
-![prova-cota-inferior](prova-cota-inferior.png)
+![prova-cota-inferior](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Imagens/prova-cota-inferior.png)
 
     T(n) é Ω(nlogn)
 
@@ -128,7 +128,7 @@ Suponha que sabemos que os elementos que desejamos ordenar têm **d dígitos**.
 
 A ideia básica é **ordenar em função dos dígitos**, um de cada vez, **começando pelo dígito menos significativo**. Desse modo, apenas d passagens pela lista são necessárias para fazer a ordenação.
 
-![enter image description here](radixsort-example.png)
+![enter image description here](https://github.com/AugustoCalado/Data-Structures-And-Algorithms/blob/master/USP/Analysis-of-Algorithms-and-Data-Structures/resources/Imagens/radixsort-example.png)
 
 ### Pseudo-código
 ```js
