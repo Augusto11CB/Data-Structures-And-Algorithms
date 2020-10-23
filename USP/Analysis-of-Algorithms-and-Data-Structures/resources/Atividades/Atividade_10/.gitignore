@@ -29,3 +29,5 @@ nbdist/
 .ebextensions
 
 src/main/resources/application-prod.properties
+
+out/*.class

@@ -1,6 +1,7 @@
 package aug.bueno;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
 
@@ -10,65 +11,48 @@ public class Main {
 
     public static int NO_VISITED = 0;
 
-    public static int nrMaxInvert;
+    public static int nrMaxInvert = 0;
 
-//    public static void main(String[] args) {
-//
-//        Scanner s = new Scanner(System.in);
-//
-//        while (true) {
-//
-//            // TODO - Adicionar regra para nrLinhas >= 3
-//            // TODO - Validate that nrLinhas is odd
-//            int nrLinhas = s.nextInt();
-//
-//            // TODO - Adicionar regra para nrColunas < 100
-//            // TODO - Validate that nrColunas is odd
-//            int nrColunas = s.nextInt();
-//
-//            // TODO - Adicionar regra para nrLinhas 0 <= nrMaxInvert >=n
-//            nrMaxInvert = s.nextInt();
-//
-//            s.nextLine();
-//
-//            if (nrLinhas == 0) break;
-//
-//            final Character[][] map = new Character[nrLinhas][];
-//
-//            for (int i = 0; i < nrLinhas; i++) {
-//
-//                map[i] = s.nextLine().chars()
-//                        .mapToObj(c -> (char) c)
-//                        .toArray(Character[]::new);
-//            }
-//
-//            final int[][] pathHistory = new int[map.length][map[0].length];
-//
-//
-//            final int[] xy = {0, 0};
-//
-//            if (tentar(map, xy, pathHistory, nrMaxInvert)) System.out.println("Sim");
-//
-//            else System.out.println("Nao");
-//
-//        }
-//
-//    }
+    public static void main(String[] args) {
 
-    // TODO - Talvez atribuir o valor subtraido ao nrMaxInvert :thinking:
-    public static boolean tentar(Character[][] map, int[] xy, int[][] pathHistory, int nrMaxInvert) {
+        Scanner s = new Scanner(System.in);
 
-        if (isOutSideMap(map, xy)) {
+        while (true) {
 
-            if (nrMaxInvert > 0) {
+            int nrLinhas = s.nextInt();
 
-                int[] newXY = invertDirection(map, xy);
-                // TODO  - Talvez marcar a posição atual como visitada..... xy
-                return tentar(map, newXY, pathHistory, nrMaxInvert - 1);
+            int nrColunas = s.nextInt();
+
+            nrMaxInvert = s.nextInt();
+
+            s.nextLine();
+
+            if (nrLinhas == 0) break;
+
+            final Character[][] map = new Character[nrLinhas][];
+
+            for (int i = 0; i < nrLinhas; i++) {
+
+                map[i] = s.nextLine().chars()
+                        .mapToObj(c -> (char) c)
+                        .toArray(Character[]::new);
             }
 
-            return false;
+            final int[][] pathHistory = new int[map.length][map[0].length];
+
+            final int[] xy = {0, 0};
+
+            if (tentar(map, xy, pathHistory, nrMaxInvert)) System.out.println("Sim");
+
+            else System.out.println("Nao");
+
         }
+
+    }
+
+    public static boolean tentar(Character[][] map, int[] xy, int[][] pathHistory, int nrMaxInvert) {
+
+        if (isOutSideMap(map, xy)) return false;
 
         if (isGoal(map, xy)) return true;
 
@@ -77,49 +61,24 @@ public class Main {
         markPosition(xy, pathHistory, VISITED);
 
         Character direction = map[xy[1]][xy[0]];
+
+
+        int[] newDirection = getNewDirection(direction, xy);
+
         boolean result = false;
 
-        switch (direction) {
-            case CIMA:
-                // TODO Ajustar essa atribuição -> usar nova variável;
-                xy[1] = xy[1] - 1; // x, (y+1)
-                result = tentar(map, xy, pathHistory, nrMaxInvert);
 
-                if (!result && nrMaxInvert > 0) {
-                    result = tentar(map, invertDirection(map, xy), pathHistory, nrMaxInvert);
-                }
+        if (!isOutSideMap(map, newDirection)) {
+            result = tentar(map, newDirection, pathHistory, nrMaxInvert);
 
-                break;
-            case BAIXO:
-                xy[1] = xy[1] + 1; // x, (y-1)
-                result = tentar(map, xy, pathHistory, nrMaxInvert);
+            if (!result && nrMaxInvert > 0) {
+                result = tentar(map, invertDirection(map, newDirection), pathHistory, nrMaxInvert - 1);
+            }
 
-                if (!result && nrMaxInvert > 0) {
-                    result = tentar(map, invertDirection(map, xy), pathHistory, nrMaxInvert);
-                }
-
-                break;
-            case ESQUERDA:
-                xy[0] = xy[0] - 1; // (x-1), y
-                result = tentar(map, xy, pathHistory, nrMaxInvert);
-
-                if (!result && nrMaxInvert > 0) {
-                    result = tentar(map, invertDirection(map, xy), pathHistory, nrMaxInvert);
-                }
-
-                break;
-            case DIREITA:
-                xy[0] = xy[0] + 1; // (x+1), y
-                result = tentar(map, xy, pathHistory, nrMaxInvert);
-
-                if (!result && nrMaxInvert > 0) {
-                    result = tentar(map, invertDirection(map, xy), pathHistory, nrMaxInvert);
-                }
-
-                break;
+        } else {
+            result = tentar(map, invertDirection(map, xy), pathHistory, nrMaxInvert - 1);
         }
 
-        // unmark x,y as part of solution path
         if (!result) {
             markPosition(xy, pathHistory, NO_VISITED);
         }
@@ -127,14 +86,35 @@ public class Main {
         return result;
     }
 
+    private static int[] getNewDirection(Character direction, int[] xy) {
+        int[] newDirection = new int[2];
+
+        switch (direction) {
+
+            case CIMA:
+                newDirection = new int[]{xy[0], xy[1] - 1};
+                break;
+            case BAIXO:
+                newDirection = new int[]{xy[0], xy[1] + 1};
+                break;
+            case ESQUERDA:
+                newDirection = new int[]{xy[0] - 1, xy[1]};
+                break;
+            case DIREITA:
+                newDirection = new int[]{xy[0] + 1, xy[1]};
+                break;
+        }
+        return newDirection;
+    }
+
 
     private static void markPosition(int[] xy, int[][] pathHistory, int status) {
-        pathHistory[xy[0]][xy[1]] = status;
+        pathHistory[xy[1]][xy[0]] = status;
     }
 
 
     private static boolean isAlreadyMarkedAsPartOfSolution(int[] xy, int[][] pathHistory) {
-        return (pathHistory[xy[0]][xy[1]] == VISITED);
+        return (pathHistory[xy[1]][xy[0]] == VISITED);
     }
 
 
@@ -171,7 +151,7 @@ public class Main {
         int numOfLines = map.length;
         int numOfColuns = map[0].length;
 
-        return ((xy[0] < 0) || (xy[0] >= numOfColuns)) || ((xy[1] < 0) && (xy[1] >= numOfLines));
+        return ((xy[0] < 0) || (xy[0] >= numOfColuns)) || ((xy[1] < 0) || (xy[1] >= numOfLines));
     }
 
 
@@ -186,7 +166,16 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
+    public static void print2D(Character mat[][]) {
+        // Loop through all rows
+        for (Character[] row : mat)
+
+            // converting each row as string
+            // and then printing in a separate line
+            System.out.println(Arrays.toString(row));
+    }
+
+    public static void main2(String[] args) {
         Character[][] myM = {
                 {DIREITA, BAIXO, CIMA},
                 {BAIXO, 'X', DIREITA},
@@ -207,7 +196,44 @@ public class Main {
 //                {'b', 'q', 'c'}
 //        };
 
-        int[] xy = {2,1};
+        int[] xy = {2, 1};
         System.out.println(Arrays.toString(invertDirection(myM, xy)));
     }
+
+    //    public static void main(String[] args) {
+//
+//        Character[][] map = {
+//                {BAIXO, BAIXO, CIMA},
+//                {BAIXO, 'X', DIREITA},
+//                {DIREITA, DIREITA, CIMA}
+//        };
+//
+//        final int[][] pathHistory = new int[map.length][map[0].length];
+//
+//
+//        final int[] xy = {0, 0};
+//
+//        if (tentar(map, xy, pathHistory, nrMaxInvert)) System.out.println("Sim");
+//
+//        else System.out.println("Nao");
+//    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
