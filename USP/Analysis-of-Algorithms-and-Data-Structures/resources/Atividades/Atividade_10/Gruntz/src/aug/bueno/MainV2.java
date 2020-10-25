@@ -83,9 +83,6 @@ public class MainV2 {
     }
 
     private static boolean tentar(Character[][] map, int nrMaxInvert) {
-
-        final int[][] pathHistory = new int[map.length][map[0].length];
-
         boolean result = false;
         //cima
         int cima = nrMaxInvert;

@@ -53,6 +53,9 @@ public class Main {
         final int[][] pathHistory = new int[map.length][map[0].length];
 
         boolean result = false;
+
+        // verificamos se ao colocar o jogador nas pontas do mapa, como especificado no enunciado, conseguimos atingir o objetivo
+
         //cima
         int cima = nrMaxInvert;
         final int[][] cimaHistory = new int[map.length][map[0].length];
@@ -85,6 +88,8 @@ public class Main {
 
     public static boolean navigate(Character[][] map, int[] xy, final int[][] pathHistory, int nrMaxInvert) {
 
+        // Valida se não é posição invalida OU
+        // Se já não foi visitado
         if (isOutSideMap(map, xy) ||
                 isAlreadyMarkedAsPartOfSolution(xy, pathHistory)) {
             return false;
@@ -102,10 +107,13 @@ public class Main {
 
         int tempNRMaxInvert = nrMaxInvert;
 
+        // Verifica se não está fora do mapa
         if (!isOutSideMap(map, newPositionToGo)) {
 
+            // Faz chamada recursiva para posição seguinte
             result = navigate(map, newPositionToGo, pathHistory, tempNRMaxInvert);
 
+            // Se não deu certo e temos como inverter a posição, então invertemos e realizamos outra chamada recursiva
             if (!result && nrMaxInvert > 0) {
 
                 if (!isOutSideMap(map, newPositionToGoInverted)) {

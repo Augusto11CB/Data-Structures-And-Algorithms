@@ -1,7 +1,5 @@
 package aug.bueno;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class MainV3 {
@@ -15,43 +13,10 @@ public class MainV3 {
     public static int NO_VISITED = 0;
 
 
-    public static void main(String[] args) throws IOException {
-        File file = new File("resources/input-file.txt");    //creates a new file instance
-
-        Scanner s = new Scanner(file);
-
-        while (true) {
-
-            int nrLinhas = s.nextInt();
-
-            int nrColunas = s.nextInt();
-
-            int nrMaxInvert = s.nextInt();
-
-            if (nrLinhas == 0) break;
-
-            s.nextLine();
-
-            final Character[][] map = new Character[nrLinhas][];
-
-            for (int i = 0; i < nrLinhas; i++) {
-
-                map[i] = s.nextLine().chars()
-                        .mapToObj(c -> (char) c)
-                        .toArray(Character[]::new);
-            }
-
-            final int[][] pathHistory = new int[map.length][map[0].length];
-
-            if (tentar(map, nrMaxInvert)) System.out.println("Sim");
-
-            else System.out.println("Nao");
-        }
-    }
-
-//    public static void main(String[] args) {
+//    public static void main(String[] args) throws IOException {
+//        File file = new File("resources/input-file.txt");    //creates a new file instance
 //
-//        Scanner s = new Scanner(System.in);
+//        Scanner s = new Scanner(file);
 //
 //        while (true) {
 //
@@ -59,11 +24,11 @@ public class MainV3 {
 //
 //            int nrColunas = s.nextInt();
 //
-//            nrMaxInvert = s.nextInt();
-//
-//            s.nextLine();
+//            int nrMaxInvert = s.nextInt();
 //
 //            if (nrLinhas == 0) break;
+//
+//            s.nextLine();
 //
 //            final Character[][] map = new Character[nrLinhas][];
 //
@@ -76,19 +41,49 @@ public class MainV3 {
 //
 //            final int[][] pathHistory = new int[map.length][map[0].length];
 //
-//            if (tentar(map, pathHistory, nrMaxInvert)) System.out.println("Sim");
+//            if (tentar(map, nrMaxInvert)) System.out.println("Sim");
 //
 //            else System.out.println("Nao");
-//
 //        }
-//
 //    }
+
+    public static void main(String[] args) {
+
+        Scanner s = new Scanner(System.in);
+
+        while (true) {
+
+            int nrLinhas = s.nextInt();
+
+            int nrColunas = s.nextInt();
+
+            int nrMaxInvert = s.nextInt();
+
+            s.nextLine();
+
+            if (nrLinhas == 0) break;
+
+            final Character[][] map = new Character[nrLinhas][];
+
+            for (int i = 0; i < nrLinhas; i++) {
+
+                map[i] = s.nextLine().chars()
+                        .mapToObj(c -> (char) c)
+                        .toArray(Character[]::new);
+            }
+
+            if (tentar(map, nrMaxInvert)) System.out.println("Sim");
+
+            else System.out.println("Nao");
+
+        }
+
+    }
 
     private static boolean tentar(Character[][] map, final int nrMaxInvert) {
 
+        // Partindo do centro 'X' e explorando as direções CIMA, BAIXO, ESQUERDA, DIREITA
         int[] startPoint = getStart(map);
-
-        final int[][] pathHistory = new int[map.length][map[0].length];
 
         boolean result = false;
 
@@ -123,7 +118,9 @@ public class MainV3 {
     }
 
     public static boolean navigate(Character[][] map, int[] xy, final int[][] pathHistory, int nrMaxInvert) {
-
+        // Valida se não é posição invalida OU
+        // Se já não foi visitado
+        // ou se não voltamos devolta para 'X'
         if (isOutSideMap(map, xy) ||
                 isAlreadyMarkedAsPartOfSolution(xy, pathHistory) ||
                 isOrigin(xy, map)) {
@@ -131,6 +128,7 @@ public class MainV3 {
         }
 
         markPosition(xy, pathHistory, VISITED);
+
 
         if (isGoal(map, xy)) return true;
 
@@ -142,10 +140,13 @@ public class MainV3 {
 
         int tempNRMaxInvert = nrMaxInvert;
 
+        // Verifica se não está fora do mapa
         if (!isOutSideMap(map, newPositionToGo)) {
 
+            // Faz chamada recursiva para posição seguinte
             result = navigate(map, newPositionToGo, pathHistory, tempNRMaxInvert);
 
+            // Se não deu certo e temos como inverter a posição, então invertemos e realizamos outra chamada recursiva
             if (!result && nrMaxInvert > 0) {
 
                 if (!isOutSideMap(map, newPositionToGoInverted)) {
@@ -170,10 +171,6 @@ public class MainV3 {
             }
         }
 
-        if (!result) {
-//            markPosition(xy, pathHistory, NO_VISITED);
-        }
-
         return result;
     }
 
@@ -184,6 +181,7 @@ public class MainV3 {
         return xy[0] == start[0] && xy[1] == start[1];
     }
 
+    // Verifica se atingimos o objetivo - Caso a posição passada seja os cantos da matriz, retornamos true
     private static boolean isGoal(Character[][] map, int[] xy) {
         return xy[1] == 0 || xy[0] == 0 || xy[1] == map.length - 1 || xy[0] == map[0].length - 1;
     }
@@ -195,11 +193,11 @@ public class MainV3 {
 
 
     private static boolean isAlreadyMarkedAsPartOfSolution(int[] xy, int[][] pathHistory) {
-//        return (pathHistory[xy[1]][xy[0]] == VISITED || pathHistory[xy[1]][xy[0]] == INVERTED);
         return (pathHistory[xy[1]][xy[0]] == VISITED);
     }
 
 
+    // Pega a posição do 'X'
     private static int[] getStart(Character[][] map) {
         int yGoal = map.length / 2;
         int xGoal = (map[0].length - 1) / 2;

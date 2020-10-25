@@ -14,6 +14,18 @@ public class MainV5 {
 
     public static int NO_VISITED = 0;
 
+    class Move {
+        int x;
+        int y;
+        int valor;
+
+        Move(int x, int y, int c) {
+            this.x = x;
+            this.y = y;
+            this.valor = c;
+        }
+    }
+
     public static void main2(String[] args) throws IOException {
 
         File file = new File("resources/input-file.txt");    //creates a new file instance
