@@ -4,16 +4,21 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Main {
+public class MainV3 {
 
     public static final char BAIXO = 'v', CIMA = '^', ESQUERDA = '<', DIREITA = '>';
 
-    public static int VISITED = 1;
+    public static int VISITED = 5;
+
+    public static int INVERTED = 3;
+
     public static int NO_VISITED = 0;
 
-    /*public static void main(String[] args) {
 
-        Scanner s = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        File file = new File("resources/input-file.txt");    //creates a new file instance
+
+        Scanner s = new Scanner(file);
 
         while (true) {
 
@@ -23,9 +28,9 @@ public class Main {
 
             int nrMaxInvert = s.nextInt();
 
-            s.nextLine();
-
             if (nrLinhas == 0) break;
+
+            s.nextLine();
 
             final Character[][] map = new Character[nrLinhas][];
 
@@ -38,45 +43,79 @@ public class Main {
 
             final int[][] pathHistory = new int[map.length][map[0].length];
 
-            final int[] xy = {0, 0};
-
             if (tentar(map, nrMaxInvert)) System.out.println("Sim");
 
             else System.out.println("Nao");
-
         }
+    }
 
-    }*/
+//    public static void main(String[] args) {
+//
+//        Scanner s = new Scanner(System.in);
+//
+//        while (true) {
+//
+//            int nrLinhas = s.nextInt();
+//
+//            int nrColunas = s.nextInt();
+//
+//            nrMaxInvert = s.nextInt();
+//
+//            s.nextLine();
+//
+//            if (nrLinhas == 0) break;
+//
+//            final Character[][] map = new Character[nrLinhas][];
+//
+//            for (int i = 0; i < nrLinhas; i++) {
+//
+//                map[i] = s.nextLine().chars()
+//                        .mapToObj(c -> (char) c)
+//                        .toArray(Character[]::new);
+//            }
+//
+//            final int[][] pathHistory = new int[map.length][map[0].length];
+//
+//            if (tentar(map, pathHistory, nrMaxInvert)) System.out.println("Sim");
+//
+//            else System.out.println("Nao");
+//
+//        }
+//
+//    }
 
-    private static boolean tentar(Character[][] map, int nrMaxInvert) {
+    private static boolean tentar(Character[][] map, final int nrMaxInvert) {
+
+        int[] startPoint = getStart(map);
 
         final int[][] pathHistory = new int[map.length][map[0].length];
 
         boolean result = false;
+
         //cima
         int cima = nrMaxInvert;
         final int[][] cimaHistory = new int[map.length][map[0].length];
-        result = navigate(map, new int[]{0, 0}, cimaHistory, cima);
+        result = navigate(map, new int[]{startPoint[0], startPoint[1] - 1}, cimaHistory, cima);
 
         //baixo
         if (!result) {
             int baixo = nrMaxInvert;
             final int[][] baixoHistory = new int[map.length][map[0].length];
-            result = navigate(map, new int[]{map[0].length - 1, map.length - 1}, baixoHistory, baixo);
+            result = navigate(map, new int[]{startPoint[0], startPoint[1] + 1}, baixoHistory, baixo);
         }
 
         //esquerda
         if (!result) {
             int esquerda = nrMaxInvert;
             final int[][] esqHistory = new int[map.length][map[0].length];
-            result = navigate(map, new int[]{0, map.length - 1}, esqHistory, esquerda);
+            result = navigate(map, new int[]{startPoint[0] - 1, startPoint[1]}, esqHistory, esquerda);
         }
 
         //direita
         if (!result) {
             int direita = nrMaxInvert;
             final int[][] dirHistory = new int[map.length][map[0].length];
-            result = navigate(map, new int[]{map[0].length - 1, 0}, dirHistory, direita);
+            result = navigate(map, new int[]{startPoint[0] + 1, startPoint[1]}, dirHistory, direita);
         }
 
         return result;
@@ -86,7 +125,8 @@ public class Main {
     public static boolean navigate(Character[][] map, int[] xy, final int[][] pathHistory, int nrMaxInvert) {
 
         if (isOutSideMap(map, xy) ||
-                isAlreadyMarkedAsPartOfSolution(xy, pathHistory)) {
+                isAlreadyMarkedAsPartOfSolution(xy, pathHistory) ||
+                isOrigin(xy, map)) {
             return false;
         }
 
@@ -115,8 +155,6 @@ public class Main {
                     tempNRMaxInvert = nrMaxInvert;
 
                     result = navigate(map, newPositionToGoInverted, pathHistory, tempNRMaxInvert);
-
-                    nrMaxInvert = tempNRMaxInvert;
                 }
             }
 
@@ -129,17 +167,27 @@ public class Main {
                 tempNRMaxInvert = nrMaxInvert;
 
                 result = navigate(map, newPositionToGoInverted, pathHistory, tempNRMaxInvert);
-
-                nrMaxInvert = tempNRMaxInvert;
             }
         }
 
         if (!result) {
-            markPosition(xy, pathHistory, NO_VISITED);
+//            markPosition(xy, pathHistory, NO_VISITED);
         }
 
         return result;
     }
+
+    private static boolean isOrigin(int[] xy, Character[][] map) {
+
+        int[] start = getStart(map);
+
+        return xy[0] == start[0] && xy[1] == start[1];
+    }
+
+    private static boolean isGoal(Character[][] map, int[] xy) {
+        return xy[1] == 0 || xy[0] == 0 || xy[1] == map.length - 1 || xy[0] == map[0].length - 1;
+    }
+
 
     private static void markPosition(int[] xy, int[][] pathHistory, int status) {
         pathHistory[xy[1]][xy[0]] = status;
@@ -147,7 +195,16 @@ public class Main {
 
 
     private static boolean isAlreadyMarkedAsPartOfSolution(int[] xy, int[][] pathHistory) {
+//        return (pathHistory[xy[1]][xy[0]] == VISITED || pathHistory[xy[1]][xy[0]] == INVERTED);
         return (pathHistory[xy[1]][xy[0]] == VISITED);
+    }
+
+
+    private static int[] getStart(Character[][] map) {
+        int yGoal = map.length / 2;
+        int xGoal = (map[0].length - 1) / 2;
+
+        return new int[]{xGoal, yGoal};
     }
 
     public static int[] getPositionToGo(Character[][] map, int[] xy) {
@@ -199,134 +256,4 @@ public class Main {
 
         return ((xy[0] < 0) || (xy[0] >= numOfColuns)) || ((xy[1] < 0) || (xy[1] >= numOfLines));
     }
-
-    private static boolean isGoal(Character[][] map, int[] xy) {
-        int yGoal = map.length / 2;
-        int xGoal = (map[0].length - 1) / 2;
-
-        return (xy[0] == xGoal) && (xy[1] == yGoal);
-    }
-
-    public static void main(String[] args) throws IOException {
-        File file = new File("resources/input-file.txt");    //creates a new file instance
-
-        Scanner s = new Scanner(file);
-
-        while (true) {
-
-            int nrLinhas = s.nextInt();
-
-            int nrColunas = s.nextInt();
-
-            int nrMaxInvert = s.nextInt();
-
-            if (nrLinhas == 0) break;
-
-            s.nextLine();
-
-            final Character[][] map = new Character[nrLinhas][];
-
-            for (int i = 0; i < nrLinhas; i++) {
-
-                map[i] = s.nextLine().chars()
-                        .mapToObj(c -> (char) c)
-                        .toArray(Character[]::new);
-            }
-
-            final int[][] pathHistory = new int[map.length][map[0].length];
-
-            final int[] xy = {0, 0};
-
-            int yGoal = map.length / 2;
-            int xGoal = (map[0].length - 1) / 2;
-//            if (navigate(map, xy, pathHistory, nrMaxInvert)) System.out.println("Sim");
-            if (tentar(map, nrMaxInvert)) System.out.println("Sim");
-
-            else System.out.println("Nao");
-        }
-    }
-
 }
-
-//
-//    public static boolean isOddNumber(int num) {
-//        return !(num % 2 == 0);
-//    }
-//
-//    public static <T> void arrayCopy(T[][] aSource, T[][] aDestination) {
-//
-//        for (int i = 0; i < aSource.length; i++) {
-//            System.arraycopy(aSource[i], 0, aDestination[i], 0, aSource[i].length);
-//        }
-//    }
-//
-//    public static void print2D(Character mat[][]) {
-//        // Loop through all rows
-//        for (Character[] row : mat)
-//
-//            // converting each row as string
-//            // and then printing in a separate line
-//            System.out.println(Arrays.toString(row));
-//    }
-//
-//    public static void main2(String[] args) {
-//        Character[][] myM = {
-//                {DIREITA, BAIXO, CIMA},
-//                {BAIXO, 'X', DIREITA},
-//                {DIREITA, CIMA, ESQUERDA}
-//        };
-
-//        Character[][] myM = {
-//                {'a','q','c'},
-//                {'b','q','c'},
-//                {'b','q','c'}
-//        };
-
-//        Character[][] myM = {
-//                {'a', 'q', 'c'},
-//                {'b', 'q', 'c'},
-//                {'b', 'q', 'c'},
-//                {'b', 'q', 'c'},
-//                {'b', 'q', 'c'}
-//        };
-
-//        int[] xy = {2, 1};
-//        System.out.println(Arrays.toString(invertDirection(myM, xy)));
-//    }
-
-//    public static void main(String[] args) {
-//
-//        Character[][] map = {
-//                {BAIXO, BAIXO, CIMA},
-//                {BAIXO, 'X', DIREITA},
-//                {DIREITA, DIREITA, CIMA}
-//        };
-//
-//        final int[][] pathHistory = new int[map.length][map[0].length];
-//
-//
-//        final int[] xy = {0, 0};
-//
-//        if (tentar(map, xy, pathHistory, nrMaxInvert)) System.out.println("Sim");
-//
-//        else System.out.println("Nao");
-//    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
