@@ -1,8 +1,31 @@
 package aug.bueno;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Scanner;
+
+/**
+ * backtracking 2 - Resolução do problema utilizando backtracking e começando apartir das pontas do mapa
+ * <p>
+ * Input 1
+ * 5 5 0
+ * >>v<<
+ * >>v<<
+ * >>x<<
+ * >>^<<
+ * >>^<<
+ * <p>
+ * Output 1
+ * Sim
+ * <p>
+ * Input 2
+ * 5 5 1
+ * >>v<<
+ * ^^^>>
+ * ^^x^^
+ * vvv>>
+ * >>^<<
+ * <p>
+ * Output 2
+ */
 
 public class Main {
 
@@ -11,7 +34,7 @@ public class Main {
     public static int VISITED = 1;
     public static int NO_VISITED = 0;
 
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
 
         Scanner s = new Scanner(System.in);
 
@@ -25,7 +48,7 @@ public class Main {
 
             s.nextLine();
 
-            if (nrLinhas == 0) break;
+//            if (nrLinhas == 0) break;
 
             final Character[][] map = new Character[nrLinhas][];
 
@@ -36,17 +59,13 @@ public class Main {
                         .toArray(Character[]::new);
             }
 
-            final int[][] pathHistory = new int[map.length][map[0].length];
-
-            final int[] xy = {0, 0};
-
             if (tentar(map, nrMaxInvert)) System.out.println("Sim");
 
             else System.out.println("Nao");
 
         }
 
-    }*/
+    }
 
     private static boolean tentar(Character[][] map, int nrMaxInvert) {
 
@@ -54,7 +73,7 @@ public class Main {
 
         boolean result = false;
 
-        // verificamos se ao colocar o jogador nas pontas do mapa, como especificado no enunciado, conseguimos atingir o objetivo
+        // verificamos se ao colocar o jogador nas pontas do mapa, como especificado no enunciado, é possivel se atingir o objetivo
 
         //cima
         int cima = nrMaxInvert;
@@ -113,7 +132,7 @@ public class Main {
             // Faz chamada recursiva para posição seguinte
             result = navigate(map, newPositionToGo, pathHistory, tempNRMaxInvert);
 
-            // Se não deu certo e temos como inverter a posição, então invertemos e realizamos outra chamada recursiva
+            // Se não deu certo e temos como inverter a posição (nrMaxInvert > 0), então invertemos e realizamos outra chamada recursiva
             if (!result && nrMaxInvert > 0) {
 
                 if (!isOutSideMap(map, newPositionToGoInverted)) {
@@ -129,6 +148,9 @@ public class Main {
             }
 
         } else {
+
+            //Caso esteja fora do mapa, verificamos se com inversão existe um caminho a se seguir. este else é o novo caminho
+            // gerado após a inversão de uma posição que estáva fora dos limits do mapa
 
             if (nrMaxInvert > 0) {
 
@@ -214,111 +236,8 @@ public class Main {
 
         return (xy[0] == xGoal) && (xy[1] == yGoal);
     }
-
-    public static void main(String[] args) throws IOException {
-        File file = new File("resources/input-file.txt");    //creates a new file instance
-
-        Scanner s = new Scanner(file);
-
-        while (true) {
-
-            int nrLinhas = s.nextInt();
-
-            int nrColunas = s.nextInt();
-
-            int nrMaxInvert = s.nextInt();
-
-            if (nrLinhas == 0) break;
-
-            s.nextLine();
-
-            final Character[][] map = new Character[nrLinhas][];
-
-            for (int i = 0; i < nrLinhas; i++) {
-
-                map[i] = s.nextLine().chars()
-                        .mapToObj(c -> (char) c)
-                        .toArray(Character[]::new);
-            }
-
-            final int[][] pathHistory = new int[map.length][map[0].length];
-
-            final int[] xy = {0, 0};
-
-            int yGoal = map.length / 2;
-            int xGoal = (map[0].length - 1) / 2;
-//            if (navigate(map, xy, pathHistory, nrMaxInvert)) System.out.println("Sim");
-            if (tentar(map, nrMaxInvert)) System.out.println("Sim");
-
-            else System.out.println("Nao");
-        }
-    }
-
+    
 }
-
-//
-//    public static boolean isOddNumber(int num) {
-//        return !(num % 2 == 0);
-//    }
-//
-//    public static <T> void arrayCopy(T[][] aSource, T[][] aDestination) {
-//
-//        for (int i = 0; i < aSource.length; i++) {
-//            System.arraycopy(aSource[i], 0, aDestination[i], 0, aSource[i].length);
-//        }
-//    }
-//
-//    public static void print2D(Character mat[][]) {
-//        // Loop through all rows
-//        for (Character[] row : mat)
-//
-//            // converting each row as string
-//            // and then printing in a separate line
-//            System.out.println(Arrays.toString(row));
-//    }
-//
-//    public static void main2(String[] args) {
-//        Character[][] myM = {
-//                {DIREITA, BAIXO, CIMA},
-//                {BAIXO, 'X', DIREITA},
-//                {DIREITA, CIMA, ESQUERDA}
-//        };
-
-//        Character[][] myM = {
-//                {'a','q','c'},
-//                {'b','q','c'},
-//                {'b','q','c'}
-//        };
-
-//        Character[][] myM = {
-//                {'a', 'q', 'c'},
-//                {'b', 'q', 'c'},
-//                {'b', 'q', 'c'},
-//                {'b', 'q', 'c'},
-//                {'b', 'q', 'c'}
-//        };
-
-//        int[] xy = {2, 1};
-//        System.out.println(Arrays.toString(invertDirection(myM, xy)));
-//    }
-
-//    public static void main(String[] args) {
-//
-//        Character[][] map = {
-//                {BAIXO, BAIXO, CIMA},
-//                {BAIXO, 'X', DIREITA},
-//                {DIREITA, DIREITA, CIMA}
-//        };
-//
-//        final int[][] pathHistory = new int[map.length][map[0].length];
-//
-//
-//        final int[] xy = {0, 0};
-//
-//        if (tentar(map, xy, pathHistory, nrMaxInvert)) System.out.println("Sim");
-//
-//        else System.out.println("Nao");
-//    }
 
 
 

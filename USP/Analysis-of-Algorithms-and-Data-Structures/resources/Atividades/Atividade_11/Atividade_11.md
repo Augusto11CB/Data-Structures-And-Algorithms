@@ -49,3 +49,6 @@ respostaMochila (v',M,V,ValOt)
         senão x[i] ←1
               Y ← Y - v'[i]
     devolva x
+
+## References
+- https://www.journaldev.com/43675/subset-sum-problem-dynamic-programming-java
