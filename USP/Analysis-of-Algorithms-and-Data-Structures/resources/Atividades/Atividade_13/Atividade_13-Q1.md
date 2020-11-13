@@ -1,0 +1,51 @@
+Considerando que uma árvore é um grafo conexo e acíclico, modifique o algoritmo DFS (a seguir) para verificar se um grafo com n vértices (dada sua lista de adjacentes) é uma árvore. O algoritmo deve devolver SIM caso o grafo de entrada é uma árvore e NÃO caso contrário.
+
+
+DFS (V, A)
+
+    for each vertex u in V                
+
+        color[u] ← WHITE
+
+        π[u] ← NIL
+
+    time ← 0
+
+    for each vertex u in V
+
+        if color[u] = WHITE
+
+            if DFS-Visit(u) = true
+                return "NÃO"
+            
+    return "SIM"
+ 
+
+DFS-Visit(u)
+
+    result = false
+
+    color[u] ← GRAY                         
+
+    time ← time + 1
+
+    d[u] ← time  // tempo em que vertice U é acessado
+
+    for each vertex v adjacent to u   // adicionando adjacentes não visitados na fila 
+        // [AUG] Talvez colocar aqui uma validação para se for visitado e não é parent então não é uma árvore
+        if color[v] = WHITE 
+            π[v] ← u // Adiciona vertice u como parent de v
+            if DFS-Visit(v) = true // Recursa sobre o vertice adjacente
+                result = true
+                BREAK
+        if π[u] != v // é visitado mas não é o parent então tem ciclo, logo não é uma arvore  
+                result = true
+                BREAK
+    
+    color[u] ← BLACK
+    
+    time ← time + 1         
+
+    f[u] ← time
+    
+    return result
