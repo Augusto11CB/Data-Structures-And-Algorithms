@@ -81,4 +81,50 @@ Os algoritmos de busca em grafos são a base de vários algoritmos mais gerais e
 
 ### Busca em Largura - Breadth-First-Search (BFS)
 
+Seja G = (V , A) e um vértice s, o algoritmo de busca em largura (breadth-first-search - BFS) percorre as arestas de G descobrindo todos os vértices atingíveis a partir de s.
+
+BFS determina a distância (em número de arestas) de cada um desses vértices a s.
+
+**Antes de encontrar um vértice à distância k+1 de s, todos os vértices à distância k são encontrados.**
+
+BFS produz uma árvore BFS com raiz em s, que contém todos os vértices acessíveis determinando o caminho mais curto (caminho que contém o número mínimo de arestas) de s a t (em que t é um vértice acessível).
+
+#### BFS - Pseudo-Codigo
+```java
+BFS(V, A, s)
+1. for each u in V − {s} ▷ para cada vértice u em V exceto s
+2.      color[u] ← WHITE ▷ no início todos os vértices são brancos
+3.      d[u] ← infinity
+4.      π[u] ← NIL
+5. color[s] ← GRAY ▷ Vértice origem descoberto
+6. d[s] ← 0
+7. π[s] ← NIL
+8. Q ← {}
+9. ENQUEUE(Q, s) ▷ Colocar o vértice origem na fila Q
+10 while Q is non-empty ▷ Enquanto existam vértices cinzas
+11.     u ← DEQUEUE(Q) ▷ i.e., u = primeiro(Q)
+12.     for each v adjacent to u ▷ para cada vértice adjacente a u
+13.         if color[v] = WHITE ▷ se é branco (ele ainda não foi descoberto)
+14.         then color[v] ← GRAY
+15.              d[v] ← d[u] + 1
+16.              π[v] ← u ▷ pai de v é o nó que levou à descoberta de v
+17.              ENQUEUE(Q, v)
+18.     color[u] ← BLACK ▷ os vizinhos de u já foram examinados
+```
+
+- (10 - 18) 
+    - Cada vértice é colocado na fila no maximo uma vez e portanto retirado da fila no máximo uma vez
+    - As operações DEQUEUE e ENQUEUE demoram tempo O(1). Assim o tempo total de operações na fila é: O(V)
+    - A lista de adjacencias de cada vertice é examidado somente quando o vértice é desenfileirado, a lista de adjacências de cada vertice é examinada no maximo uma vez
+    - Assim o tempo gasto na varredura total das listas de adjacencia é O(A)
+    - O tempo gasto na varredura total das listas de adjacências é: O
+- (1 - 9)
+    - A inicialização é O(V)
+
+#### Tempo BFS
+O tempo total da busca em largura é O(V+A)
+
 TODO - Get Print Slide 6
+
+
+### Busca em Profundidade - DFS
