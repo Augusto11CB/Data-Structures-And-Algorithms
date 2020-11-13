@@ -13,16 +13,28 @@ DFS (V, A)
 
     for each vertex u in V
 
-        if color[u] = WHITE
+        if color[u] = WHITE //(?)
 
             if DFS-Visit(u) = true
                 return "NÃO"
-            
-    return "SIM"
+    
+    result = 0;
+    for each vertex u in V
+        if π[u] = NIL
+            result = result + 1
+    
+    if result > 1 
+        return "NÃO"
+    else 
+        return "SIM"
  
 
 DFS-Visit(u)
 
+    // Ao invez de tratarmos os vertices "ilhados" na função DFS após chamar o DFS-Visit para todo vertice em V, talvez
+    // fosse melhor validar aq mesmo se o vertice um pai; se ele não tiver um pai ele pode ser a raiz ou um vertice ilhado
+    // dai além de u, passariamos uma variavel global marcando "quantos vertices órfãos" temos. Se haver mais de 1 significa
+    // que além da "raiz" temos esses vertices ilhas
     result = false
 
     color[u] ← GRAY                         
@@ -32,12 +44,14 @@ DFS-Visit(u)
     d[u] ← time  // tempo em que vertice U é acessado
 
     for each vertex v adjacent to u   // adicionando adjacentes não visitados na fila 
-        // [AUG] Talvez colocar aqui uma validação para se for visitado e não é parent então não é uma árvore
+        
         if color[v] = WHITE 
             π[v] ← u // Adiciona vertice u como parent de v
+            
             if DFS-Visit(v) = true // Recursa sobre o vertice adjacente
                 result = true
                 BREAK
+        
         if π[u] != v // é visitado mas não é o parent então tem ciclo, logo não é uma arvore  
                 result = true
                 BREAK
