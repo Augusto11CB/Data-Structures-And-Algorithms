@@ -92,25 +92,22 @@ public class Main3 {
             }
         }
 
-        private boolean checkIfAdjIsPartOfCycleByRecursionStackLevel(
-            Integer adjOfV, int[] registerOfRecursionLevelCycleStarted, 
-            int vertice, int[] registerOfFirstNodeAcessInRecursionStack) {
-
+        private boolean checkIfAdjIsPartOfCycleByRecursionStackLevel(Integer adjOfV, int[] registerOfRecursionLevelCycleStarted, int vertice, int[] registerOfFirstNodeAcessInRecursionStack) {
             return registerOfRecursionLevelCycleStarted[adjOfV] > registerOfFirstNodeAcessInRecursionStack[vertice];
         }
     }
 
     public static void calculate(Graph graph) {
 
-        int[] low = new int[graph.V];
-        int[] num = new int[graph.V];
-        int[] visited = new int[graph.V];
+        int[] registerOfRecursionLevelCycleStarted = new int[graph.V];
+        int[] registerOfFirstNodeAcessInRecursionStack = new int[graph.V];
+        int[] parent = new int[graph.V];
         for (int i = 0; i < graph.V; i++) {
-            visited[i] = -1;
-            low[i] = -1;
-            num[i] = -1;
+            parent[i] = -1;
+            registerOfRecursionLevelCycleStarted[i] = -1;
+            registerOfFirstNodeAcessInRecursionStack[i] = -1;
         }
 
-        graph.traverseMapAndCountBridges(1, visited, low, num);
+        graph.traverseMapAndCountBridges(1, parent, registerOfRecursionLevelCycleStarted, registerOfFirstNodeAcessInRecursionStack);
     }
 }
