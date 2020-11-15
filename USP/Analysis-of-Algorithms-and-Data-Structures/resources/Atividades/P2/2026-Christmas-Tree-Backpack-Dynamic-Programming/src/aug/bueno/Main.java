@@ -34,6 +34,7 @@ public class Main {
 //            calculateNumberOfOrnamentsForATree(numberOfPackeges, weightSupportedByBranch, vectorOfWeightPerPackage, vectorOfOrnamentsPerPackage, dynamicVector);
             System.out.println("Galho " + i + ":");
             System.out.println("Numero total de enfeites: " + x);
+            System.out.println();
 
         }
 
@@ -111,8 +112,8 @@ public class Main {
     }
 
     public static void printVector(int[] dynamicVector) {
-        for (int i = 0; i < dynamicVector.length; i++) {
-            System.out.println(dynamicVector[i]);
+        for (int j : dynamicVector) {
+            System.out.println(j);
         }
     }
 }

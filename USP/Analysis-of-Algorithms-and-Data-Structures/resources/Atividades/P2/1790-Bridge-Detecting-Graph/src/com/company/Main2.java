@@ -1,4 +1,4 @@
-/*
+
 package com.company;
 
 import java.io.BufferedReader;
@@ -75,11 +75,13 @@ public class Main2 {
                     isCyclicUtil(adjOfV, visited, parent);
                     // Depois da recursão deveriamos entender se houve um ciclo ou não
                     // dai a gente conseguiria atualizar o NON_CYCLIC_EDGES
+                    if(estruturas)
                     NON_CYCLIC_EDGES = NON_CYCLIC_EDGES + 1;
 
                 }
 
                 else if (adjOfV != parent[v]) {
+                    estruras
                     continue;
                 } else {
 //                    NON_CYCLIC_EDGES = NON_CYCLIC_EDGES + 1;

@@ -92,7 +92,10 @@ public class Main3 {
             }
         }
 
-        private boolean checkIfAdjIsPartOfCycleByRecursionStackLevel(Integer adjOfV, int[] registerOfRecursionLevelCycleStarted, int vertice, int[] registerOfFirstNodeAcessInRecursionStack) {
+        private boolean checkIfAdjIsPartOfCycleByRecursionStackLevel(
+            Integer adjOfV, int[] registerOfRecursionLevelCycleStarted, 
+            int vertice, int[] registerOfFirstNodeAcessInRecursionStack) {
+
             return registerOfRecursionLevelCycleStarted[adjOfV] > registerOfFirstNodeAcessInRecursionStack[vertice];
         }
     }
