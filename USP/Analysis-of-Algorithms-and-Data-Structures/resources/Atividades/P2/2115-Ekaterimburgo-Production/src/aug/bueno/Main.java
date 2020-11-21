@@ -15,7 +15,7 @@ public class Main {
         StringBuilder result = new StringBuilder();
         String line;
 
-        while ((line = s.readLine()) != null & !line.equals("-1")) {
+        while ((line = s.readLine()) != null) {
 
             List<Pair> tasks = new ArrayList<>();
             int numberOfTasks = Integer.parseInt(line);
