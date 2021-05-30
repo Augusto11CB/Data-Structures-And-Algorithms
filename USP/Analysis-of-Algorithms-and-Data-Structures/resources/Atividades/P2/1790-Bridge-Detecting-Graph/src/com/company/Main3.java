@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
 
-public class Main3 {
+public class Main {
 
     public static int NON_CYCLIC_EDGES = 0;
-    public static int RECURSION_LEVEL_COUNTER = 0;
+    public static int DFS_NUMBER_COUNTER = 0;
     public static int UNVISITED = -1;
 
     static BufferedReader s = new BufferedReader(new InputStreamReader(System.in));
@@ -19,7 +19,7 @@ public class Main3 {
 
         while ((line = s.readLine()) != null) {
             NON_CYCLIC_EDGES = 0;
-            RECURSION_LEVEL_COUNTER = 0;
+            DFS_NUMBER_COUNTER = 0;
 
             String[] citiesAndBridges = line.split(" ");
 
@@ -34,6 +34,7 @@ public class Main3 {
 
             calculate(graph);
             System.out.println(NON_CYCLIC_EDGES);
+
 
         }
     }
@@ -55,23 +56,23 @@ public class Main3 {
             adj[w].add(v);
         }
 
-        void traverseMapAndCountBridges(int vertice, int[] parent, int[] registerOfRecursionLevelCycleStarted, int[] registerOfFirstNodeAcessInRecursionStack) {
-            RECURSION_LEVEL_COUNTER = RECURSION_LEVEL_COUNTER + 1;
+        void traverseMapAndCountBridges(int vertice, int[] parent, int[] low, int[] num) {
+            DFS_NUMBER_COUNTER = DFS_NUMBER_COUNTER + 1;
             // low aq está recebendo quando foi acessado na pilha da recursão, mas ele nao vai armazenar esse valor caso tenha ciclo.
             // Caso tenha ciclo significa que ele encontrou/acessou algum node adjacente que foi acessado em um nivel de recursão antes dele,
             // dai **quando saimos da recursão** o lowDoAtualVertice recebe o min entre o lowDoAdjacente ou o numDoAtualVertice
             // mas quando detectamos um circulo o lowDoAtualVertice recebe o minino entre o lowDoAtualVertice numDoAdjacente, continua em (***)
-            registerOfRecursionLevelCycleStarted[vertice] = RECURSION_LEVEL_COUNTER;
-            registerOfFirstNodeAcessInRecursionStack[vertice] = RECURSION_LEVEL_COUNTER; //Marca tipo a ordem/nivel_da_recursao que foi acessado o vertice atual
+            low[vertice] = DFS_NUMBER_COUNTER;
+            num[vertice] = DFS_NUMBER_COUNTER; //Marca tipo a ordem/nivel_da_recursao que foi acessado o vertice atual
 
             Integer adjOfV;
             for (Integer adj : adj[vertice]) {
                 adjOfV = adj;
 
-                if (registerOfFirstNodeAcessInRecursionStack[adjOfV] == UNVISITED) {
+                if (num[adjOfV] == UNVISITED) {
 
                     parent[adjOfV] = vertice;
-                    traverseMapAndCountBridges(adjOfV, parent, registerOfRecursionLevelCycleStarted, registerOfFirstNodeAcessInRecursionStack);
+                    traverseMapAndCountBridges(adjOfV, parent, low, num);
 
                     // (***) se o lowDoAdjacente que acabamos de rodar a recursão ainda é maior, significa que ele acessou os seus adjacentes e os adjacentes dele acessaram os seus proprios adjacentes (etc) .... e não encontraram nenhum node que foi acessado em um nivel de recursão anterior
                     // Caso o lowDoAdjacente seja menor que o numDoAtualVertice significa que o atualVertice faz parte de um ciclo e, portando, o lowDoAtualVertice recebera o nivel de recursão onde esse ciclo começou
@@ -79,21 +80,16 @@ public class Main3 {
 
                     // no caso quando há um ciclo  na recursão que acabou de retornar
                     // o low recebeu o menor valor entre low[vertice] num[adjOfV]
-                    if (checkIfAdjIsPartOfCycleByRecursionStackLevel(adjOfV, registerOfRecursionLevelCycleStarted, vertice, registerOfFirstNodeAcessInRecursionStack)) {
+                    if (low[adjOfV] > num[vertice]) {
                         NON_CYCLIC_EDGES = NON_CYCLIC_EDGES + 1;
                     }
 
-                    // Como o node atual tem um adjacente que faz parte de um ciclo, logo ele também faz parte de um ciclo. dai agora a gente pega o nivel da recursão que esse ciclo começou e atribui ao registerOfRecursionLevelCycleStarted do nodeAtual
-                    registerOfRecursionLevelCycleStarted[vertice] = Math.min(registerOfRecursionLevelCycleStarted[vertice], registerOfRecursionLevelCycleStarted[adjOfV]);
+                    low[vertice] = Math.min(low[vertice], low[adjOfV]);
                 } else if (adjOfV != parent[vertice]) {
                     // se é diferente do parent e é visitado significa que houve um cycle
-                    registerOfRecursionLevelCycleStarted[vertice] = Math.min(registerOfRecursionLevelCycleStarted[vertice], registerOfFirstNodeAcessInRecursionStack[adjOfV]);
+                    low[vertice] = Math.min(low[vertice], num[adjOfV]);
                 }
             }
-        }
-
-        private boolean checkIfAdjIsPartOfCycleByRecursionStackLevel(Integer adjOfV, int[] registerOfRecursionLevelCycleStarted, int vertice, int[] registerOfFirstNodeAcessInRecursionStack) {
-            return registerOfRecursionLevelCycleStarted[adjOfV] > registerOfFirstNodeAcessInRecursionStack[vertice];
         }
     }
 
