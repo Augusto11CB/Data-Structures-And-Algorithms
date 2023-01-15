@@ -100,3 +100,37 @@ class ProblemSolution {
         System.out.println(sol.validPath2(5, new int[][]{{0, 1}, {3, 4}}, 0, 4));     // false
     }
 }
+
+/*
+// KOTLIN
+
+    fun validPath(n: Int, edges: Array<IntArray>, source: Int, destination: Int): Boolean {
+        val graph = HashMap<Int, ArrayList<Int>>()
+        val visited = HashSet<Int>()
+        for (i in 0 until n) {
+            graph[i] = ArrayList()
+        }
+        for (edge in edges) {
+            graph[edge[0]]?.add(edge[1])
+            graph[edge[1]]?.add(edge[0])
+        }
+        dfs2(visited, graph, source)
+        return visited.contains(destination)
+    }
+
+    private fun dfs2(visited: HashSet<Int>, graph: HashMap<Int, ArrayList<Int>>, node: Int) {
+        val s = Stack<Int>()
+        visited.add(node)
+        s.add(node)
+        while (!s.isEmpty()) {
+            val current = s.pop()
+            val adjList = graph[current]
+            adjList?.forEach { neighbor ->
+                if (!visited.contains(neighbor)) {
+                    visited.add(neighbor)
+                    s.add(neighbor)
+                }
+            }
+        }
+    }
+* */
