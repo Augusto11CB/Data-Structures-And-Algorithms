@@ -8,7 +8,7 @@ public class Trie {
     }
 
     // Recursive function to delete a key from the Trie
-    private boolean delete(TrieNode current, String word, int index) {
+    private boolean delete2(TrieNode current, String word, int index) {
         // Base case: If the word's end is reached
         if (index == word.length()) {
             // If the word exists, unmark it and check if the node can be deleted
@@ -25,13 +25,53 @@ public class Trie {
             return false; // Word not found
         }
 
-        boolean shouldDeleteChild = delete(node, word, index + 1);
+        boolean shouldDeleteChild = delete2(node, word, index + 1);
 
         // If true is returned, delete the child reference of the current TrieNode
         if (shouldDeleteChild) {
             current.children[ch - 'a'] = null;
             // Return true if no mappings are left in the map
             return current.children.length == 0;
+        }
+
+        return false;
+    }
+
+    private boolean delete(TrieNode current, String word, int index) {
+        // Base case: If the word's end is reached
+        if (index == word.length()) {
+            // If the word exists, unmark it and check if the node can be deleted
+            if (current.isEndOfWord) {
+                current.isEndOfWord = false;
+                // Check if all children are null
+                for (TrieNode child : current.children) {
+                    if (child != null) {
+                        return false; // Return false if any child exists
+                    }
+                }
+                return true; // Return true if all children are null
+            }
+            return false;
+        }
+
+        char ch = word.charAt(index);
+        TrieNode node = current.children[ch - 'a'];
+        if (node == null) {
+            return false; // Word not found
+        }
+
+        boolean shouldDeleteChild = delete(node, word, index + 1);
+
+        // If true is returned, delete the child reference of the current TrieNode
+        if (shouldDeleteChild) {
+            current.children[ch - 'a'] = null;
+            // Check if all children are null
+            for (TrieNode child : current.children) {
+                if (child != null) {
+                    return false; // Return false if any child exists
+                }
+            }
+            return !current.isEndOfWord;// Return true if all children are null
         }
 
         return false;
@@ -81,7 +121,15 @@ public class Trie {
     public static void main(String[] args) {
         var trie = new Trie();
         trie.insert("thestoryofleetcodeandme");
-        var result = trie.search("leet");
+        trie.insert("augusto");
+        trie.insert("teste");
+        trie.insert("caro");
+        trie.insert("car");
+
+        var result = trie.search("caro");
+        System.out.println(result);
+        trie.deleteWord("caro");
+        result = trie.search("caro");
         System.out.println(result);
     }
 }

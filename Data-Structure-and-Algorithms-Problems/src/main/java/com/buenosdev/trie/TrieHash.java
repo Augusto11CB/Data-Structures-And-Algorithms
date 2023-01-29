@@ -1,8 +1,5 @@
 package com.buenosdev.trie;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class TrieHash {
     TrieNodeHash root;
 

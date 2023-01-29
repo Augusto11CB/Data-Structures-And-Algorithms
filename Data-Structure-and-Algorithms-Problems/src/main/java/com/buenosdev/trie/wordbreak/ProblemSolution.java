@@ -2,7 +2,9 @@ package com.buenosdev.trie.wordbreak;
 
 import com.buenosdev.trie.TrieNodeHash;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 
 class ProblemSolution {
 
