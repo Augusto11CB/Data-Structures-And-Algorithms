@@ -10,15 +10,16 @@ public class MidleLinkedList {
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
         head.next.next.next.next.next = new ListNode(6);
-        head.next.next.next.next.next.next = new ListNode(7);
+//        head.next.next.next.next.next.next = new ListNode(7);
 //        head.next.next.next.next.next.next.next = new ListNode(8);
 //        head.next.next.next.next.next.next.next.next = new ListNode(9);
 //        head.next.next.next.next.next.next.next.next.next = new ListNode(10);
 
-        System.out.println(middleNode(head).val);
+//        System.out.println(middleNodeFirstSolution(head).val);
+        System.out.println(middleNodeSecondSolution(head).val);
     }
 
-    public static ListNode middleNode(ListNode head) {
+    public static ListNode middleNodeFirstSolution(ListNode head) {
         ArrayList<ListNode> nodes = new ArrayList<>();
         while (head != null) {
             nodes.add(head);
@@ -30,6 +31,19 @@ public class MidleLinkedList {
         return node;
     }
 
+
+    public static ListNode middleNodeSecondSolution(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode middleNode = head;
+        ListNode aux = head;
+        while (aux != null && aux.next != null) {
+            middleNode = middleNode.next;
+            aux = aux.next.next;
+        }
+        return middleNode;
+    }
 
     public static class ListNode {
         int val;
