@@ -1,4 +1,4 @@
-## 876 Middle Linked List
+# 876 Middle Linked List
 
 ## Solution 1
 ### Intuition
