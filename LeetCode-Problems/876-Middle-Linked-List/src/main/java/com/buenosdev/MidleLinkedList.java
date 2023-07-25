@@ -32,17 +32,21 @@ public class MidleLinkedList {
     }
 
 
+    /*
+    The "fast" and "slow" pointers work to find the middle node in a linked list because the "fast" pointer moves two nodes at a time, while the "slow" pointer moves one node at a time. This means that the "fast" pointer will always be two nodes ahead of the "slow" pointer.
+    When the "fast" pointer reaches the end of the linked list, the "slow" pointer will be at the middle node. This is because the "slow" pointer has only moved half as many nodes as the "fast" pointer.
+    * */
     public static ListNode middleNodeSecondSolution(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode middleNode = head;
-        ListNode aux = head;
-        while (aux != null && aux.next != null) {
-            middleNode = middleNode.next;
-            aux = aux.next.next;
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
-        return middleNode;
+        return slow;
     }
 
     public static class ListNode {
