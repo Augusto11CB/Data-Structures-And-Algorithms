@@ -10,30 +10,7 @@ public class ReverseLinkedList {
             System.out.println(reversedList.val);
             reversedList = reversedList.next;
         }
-    }
 
-
-    public static ListNode rotateRight(ListNode head, int k) {
-        if (head == null) return null;
-        if (head.next == null) return head;
-
-        ListNode aux = head;
-        int size = 1;
-        while (aux.next != null) {
-            size++;
-            aux = aux.next;
-        }
-
-        aux.next = head;
-
-        for (int i = 0; i < size - k % size; i++) {
-            aux = aux.next;
-        }
-
-        head = aux.next;
-        aux.next = null;
-
-        return head;
     }
 
     public static ListNode reverseList(ListNode head) {
