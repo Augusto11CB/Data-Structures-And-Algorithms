@@ -2,6 +2,7 @@ package com.buenosdev;
 
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.Set;
 
 public class Playground {
 
@@ -72,5 +73,17 @@ public class Playground {
 //        return startIndex;
     }
 
+    // 1346. Check If N and Its Double Exist - TODO
+    public static boolean checkIfExist(int[] arr) {
+        Set<Integer> setOfNumbersInArr = new HashSet<>();
+        for (int i : arr) {
 
+            if (setOfNumbersInArr.contains(i * 2) || (i % 2 == 0 && setOfNumbersInArr.contains(i / 2))) {
+                return true;
+            }
+            setOfNumbersInArr.add(i);
+        }
+        return false;
+    }
 }
+
