@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class RotateList {
 
     public static void main(String[] args) {
-        System.out.println(2 - (2 % 2));
+        System.out.println(3 - (4 % 3));
+        System.out.println((3 % 2));
 
     }
 
@@ -30,7 +31,7 @@ public class RotateList {
         return head;
 
         //        myArray.get(listSize - 1).next = head;
-        //        var newTainIndex = listSize - (k % listSize); // 0
+        //        var newTainIndex = listSize - (k % listSize);
         //        head = myArray.get(newTainIndex - 1).next;
         //        myArray.get(newTainIndex - 1).next = null;
     }
