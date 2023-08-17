@@ -2,5 +2,5 @@
   - Trees
     - Tree-related terms
     - Binary Trees
-    - ****Binary Search Trees ****
-    - ****Heaps****
+    - Binary Search Trees (BST)
+    - Heaps
