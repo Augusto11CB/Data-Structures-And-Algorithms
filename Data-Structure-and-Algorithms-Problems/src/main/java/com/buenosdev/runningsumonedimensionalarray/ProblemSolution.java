@@ -1,8 +1,8 @@
 package com.buenosdev.runningsumonedimensionalarray;
 
-public class ProblemSolution {
+class ProblemSolution {
 
-    // Problem 1: Running Sum of 1d Array (easy)
+    // Problem 1: Running Sum of 1d Array
 
     /*
     Given a one-dimensional array of integers, create a new array that represents the running sum of the original array.
