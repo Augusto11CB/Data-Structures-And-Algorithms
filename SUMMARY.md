@@ -16,6 +16,7 @@
     * [Depth First Search](Algorithms/Search-Algorithms/Depth-First-Search/README.md)
 * [Data-Structures](Data-Structures/README.md)
   * [Array](Data-Structures/Array/README.md)
+  * [Matrix](Data-Structures/matrix.md)
   * [Heap](Data-Structures/Heap/README.md)
 * [Materials From Universities and Colleges](Extra-Materials-Design-Analysis-of-Algorithms/README.md)
   * [Solving-and-Finding-Recurrences](Extra-Materials-Design-Analysis-of-Algorithms/Solving-and-Finding-Recurrences/README.md)
@@ -84,3 +85,7 @@
   * [DivideConquer-Sorting-Searching-Randomized-Algorithms](Stanford-Algorithms-Specialization/DivideConquer-Sorting-Searching-Randomized-Algorithms/README.md)
     * [week-1](Stanford-Algorithms-Specialization/DivideConquer-Sorting-Searching-Randomized-Algorithms/week-1/README.md)
     * [The Master Method](Stanford-Algorithms-Specialization/DivideConquer-Sorting-Searching-Randomized-Algorithms/week-2/README.md)
+
+## System Design
+
+* [Load Balancing](system-design/load-balancing.md)
