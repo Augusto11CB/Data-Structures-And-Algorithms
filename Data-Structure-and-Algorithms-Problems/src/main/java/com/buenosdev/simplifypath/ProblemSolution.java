@@ -7,6 +7,8 @@ class ProblemSolution {
     // (Stack) Problem 7: Simplify Path
 
     /*
+    Give a string s and convert it into a valid string.
+    A string is considered valid if it does not have any two adjacent duplicate characters. The task is to remove the minimum number of characters from s such that it becomes valid. The removal of characters should be done in a way that no further removals are required.
      * */
 
     /*
