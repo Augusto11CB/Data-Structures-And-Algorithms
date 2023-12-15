@@ -22,9 +22,9 @@ Stacks in data structures operate on the Last-In, First-Out (LIFO) principle. Th
 
 
 
-#### Array Time Complexity Operations Summary
+#### Stack Time Complexity Operations Summary
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Design Gurus, 2023a</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Design Gurus, 2023a</p></figcaption></figure>
 
 
 
@@ -210,6 +210,17 @@ public class Stack<T> {
 }
 
 ```
+
+
+
+### Insight Problem Solving with Stack
+
+* Manipulação de elementos levando em consideração os elementos adjacentes.
+  * [https://leetcode.com/submissions/detail/1119872765/](https://leetcode.com/submissions/detail/1119872765/)
+  * [https://leetcode.com/submissions/detail/1119832765/](https://leetcode.com/submissions/detail/1119832765/)
+  * [https://leetcode.com/submissions/detail/1119814445/](https://leetcode.com/submissions/detail/1119814445/)
+* TBD
+  * [https://leetcode.com/submissions/detail/1117482038/](https://leetcode.com/submissions/detail/1117482038/)
 
 
 
