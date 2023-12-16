@@ -29,12 +29,21 @@ class ProblemSolution {
 
     public static String[] generateBinaryNumbers(int n) {
         Queue<String> queue = new LinkedList<>();
+        // Enqueue the binary representation of the first number, which is '1'.
         queue.add("1");
 
         String[] res = new String[n];
+        // Loop to generate the binary numbers
         for (int i = 0; i < n; i++) {
+            // dequeue an element from the front of the queue
+            // This element is the binary representation of the current number
             res[i] = queue.remove();
+
+            // Take the dequeued binary number and append '0' to it
+            // Enqueue this new number back into the queue.
             queue.add(res[i] + "0");
+            // Take the dequeued binary number and append '1' to it
+            // Enqueue this new number back into the queue.
             queue.add(res[i] + "1");
         }
         return res;
