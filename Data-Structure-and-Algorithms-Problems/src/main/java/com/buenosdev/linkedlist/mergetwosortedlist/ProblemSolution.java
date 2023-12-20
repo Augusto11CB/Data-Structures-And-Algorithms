@@ -87,7 +87,7 @@ class ProblemSolution {
         return result;
 
         /*
-        Time Complexity: O(n)
+        Time Complexity: O(n + m):  `n` and `m` are the lengths of the two input lists
 
         Space Complexity: O(1)
         */
