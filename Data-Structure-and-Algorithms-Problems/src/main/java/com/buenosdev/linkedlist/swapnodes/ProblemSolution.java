@@ -21,6 +21,18 @@ class ProblemSolution {
     Justification: The pair (5,6) is swapped
     * */
 
+    public static void main(String[] args) {
+        ProblemSolution solution = new ProblemSolution();
+
+        // Initialize the list and perform the swap.
+        ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
+        ListNode newHead = solution.swapPairs(head);
+        // Print the list after swapping pairs.
+        while (newHead != null) {
+            System.out.print(newHead.val + " ");
+            newHead = newHead.next;
+        }
+    }
 
     public ListNode swapPairs(ListNode head) {
 
@@ -58,17 +70,30 @@ class ProblemSolution {
         Space Complexity: O(1)
         */
 
-    public static void main(String[] args) {
-        ProblemSolution solution = new ProblemSolution();
+    public ListNode swapPairsV2(ListNode head) {
+        // Initialize a dummy node to maintain the new head of the list after swapping.
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        // Previous node to maintain the node previous to the current pair being swapped.
+        ListNode previous = dummy;
 
-        // Initialize the list and perform the swap.
-        ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
-        ListNode newHead = solution.swapPairs(head);
-        // Print the list after swapping pairs.
-        while (newHead != null) {
-            System.out.print(newHead.val + " ");
-            newHead = newHead.next;
+        // Continue swapping until no pairs are left.
+        while (head != null && head.next != null) {
+            // Initialize the first and second nodes of the pair to be swapped.
+            ListNode firstNode = head;
+            ListNode secondNode = head.next;
+
+            // Adjust the pointers to perform the swap.
+            firstNode.next = secondNode.next;
+            secondNode.next = firstNode;
+            previous.next = secondNode;
+
+            // Move to the next pair.
+            head = firstNode.next;
+            previous = firstNode;
         }
+        // Return the new head of the list after swapping.
+        return dummy.next;
     }
 
 }
