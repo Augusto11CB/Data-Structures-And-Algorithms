@@ -2,96 +2,75 @@ package com.buenosdev.linkedlist.swapnodes;
 
 class ProblemSolution {
 
-    // (Linked List) Problem 3: Merge Two Sorted Lists
+    // (Linked List) Problem 5: Swap Nodes in Pairs
 
     /*
-    Given the head of two sorted linked lists, l1 and l2.
-    Return a new sorted list created by merging together the nodes of the first two lists.
+    Given a singly linked list, swap every two adjacent nodes and return the head of the modified list.
+    If the total number of nodes in the list is odd, the last node remains in place. Every node in the linked list contains a single integer value.
     **/
 
     /*
     Example 1:
-    Input:
-    [1, 3, 5]
-    [2, 4, 6]
-    Expected Output:
-    [1, 2, 3, 4, 5, 6]
-    Justification: Merging the two sorted linked lists, node by node, results in a single sorted linked list containing all elements from both input lists.
-     * */
+    Input: [7, 8, 9, 10, 11]
+    Output: [8, 7, 10, 9, 11]
+    Justification: Pairs (7,8) and (9,10) are swapped. 11 remains in its place as it has no adjacent node to swap with.
+
+    Example 2:
+    Input: [5, 6]
+    Output: [6, 5]
+    Justification: The pair (5,6) is swapped
+    * */
 
 
-    // Main method for testing
-    public static void main(String[] args) {
-        ProblemSolution solution = new ProblemSolution();
+    public ListNode swapPairs(ListNode head) {
 
-        // Create the first example ListNode instances
-        ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(3)));
-        ListNode list2 = new ListNode(1, new ListNode(4));
-
-        // Call mergeTwoLists method and print the result
-        ListNode result = solution.mergeTwoLists(list1, list2);
-        while (result != null) {
-            System.out.print(result.val + " ");
-            result = result.next;
+        if (head == null || head.next == null) {
+            return head;
         }
-    }
 
-    public static void printList(ListNode head) {
-        while (head != null) {
-            System.out.print(head.val + " ");
-            head = head.next;
-        }
-        System.out.println();
-    }
+        ListNode movingHead = head;
+        head = head.next;
+        ListNode prev = null;
 
-    public ListNode deleteDuplicates(ListNode head) {
-        ListNode aux = head;
+        while (movingHead != null) {
 
-        while (aux != null && aux.next != null) {
-            if (aux.val == aux.next.val) {
-                if (aux.next.next != null) {
-                    aux.next = aux.next.next;
-                } else {
-                    aux.next = null;
+            if (movingHead.next != null) {
+                ListNode aux = movingHead.next; //C
+                movingHead.next = aux.next; // A --> D
+                aux.next = movingHead; // C --> A
+                // [-->] C --> A --> D
+                // [-->] is the prev
+                if (prev != null) {
+                    prev.next = aux;
                 }
-            } else {
-                aux = aux.next;
             }
+
+            prev = movingHead;
+            movingHead = movingHead.next;
         }
+
         return head;
     }
 
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        var result = new ListNode();
-        var fakeHead = result;
-
-        while (l1 != null && l2 != null) {
-            if (l1.val < l2.val) {
-                fakeHead.next = l1;
-                fakeHead = fakeHead.next;
-                l1 = l1.next;
-            } else {
-                fakeHead.next = l2;
-                fakeHead = fakeHead.next;
-                l2 = l2.next;
-            }
-        }
-
-        if (l1 != null) {
-            fakeHead.next = l1;
-        }
-        if (l2 != null) {
-            fakeHead.next = l2;
-        }
-
-        return result;
-
-        /*
-        Time Complexity: O(n + m):  `n` and `m` are the lengths of the two input lists
+       /*
+        Time Complexity: O(n):
 
         Space Complexity: O(1)
         */
+
+    public static void main(String[] args) {
+        ProblemSolution solution = new ProblemSolution();
+
+        // Initialize the list and perform the swap.
+        ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
+        ListNode newHead = solution.swapPairs(head);
+        // Print the list after swapping pairs.
+        while (newHead != null) {
+            System.out.print(newHead.val + " ");
+            newHead = newHead.next;
+        }
     }
+
 }
 
 class ListNode {
