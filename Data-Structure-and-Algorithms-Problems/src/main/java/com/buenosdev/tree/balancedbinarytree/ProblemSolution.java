@@ -80,13 +80,3 @@ class TreeNode {
         val = x;
     }
 }
-
-class Pair {
-    int right;
-    int left;
-
-    public Pair(int right, int left) {
-        this.right = right;
-        this.left = left;
-    }
-}
