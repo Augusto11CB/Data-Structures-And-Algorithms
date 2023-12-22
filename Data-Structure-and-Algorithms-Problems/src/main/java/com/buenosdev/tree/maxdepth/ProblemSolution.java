@@ -2,7 +2,7 @@ package com.buenosdev.tree.maxdepth;
 
 class ProblemSolution {
 
-    // (Tree) Maximum Depth (or Height) of Binary Tree
+    // (Tree) Problem 1: Maximum Depth (or Height) of Binary Tree
 
     /*
     https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
