@@ -1,4 +1,4 @@
-package com.buenosdev.tree.balancedbinarytree.closestbinarysearchtreevalue;
+package com.buenosdev.tree.closestbinarysearchtreevalue;
 
 public class ProblemSolutionV2 {
 
