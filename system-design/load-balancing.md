@@ -9,7 +9,7 @@
 
 Load balancers play a crucial role in optimizing system performance and ensuring robustness.&#x20;
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Design Gurus, 2023a</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Design Gurus, 2023a</p></figcaption></figure>
 
 ### How Load Balancer Work?
 
@@ -186,7 +186,7 @@ The Least Response Time algorithm directs incoming requests to the server with t
 * Active-passive configuration: One load balancer handles traffic while the other remains on standby. If the active load balancer fails, the passive instance takes over.
 * Active-active configuration: Multiple load balancer instances process traffic simultaneously, distributing load and providing increased fault tolerance.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Design Guru, 2023b</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Design Guru, 2023b</p></figcaption></figure>
 
 
 

@@ -9,7 +9,7 @@
   2. Forwards them to the appropriate backend service.
   3. Returns the server’s response to the client.
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt="" width="375"><figcaption><p>Design Gurus, 2023a</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt="" width="375"><figcaption><p>Design Gurus, 2023a</p></figcaption></figure>
 
 
 
@@ -18,7 +18,7 @@
 * API Gateway: focused on **routing** requests to the appropriate backend service based on specific URLs.
 * Load Balancer: focused on **distributing** requests _evenly_ across a group of backend servers.
 
-<figure><img src="../.gitbook/assets/image (5).png" alt="" width="375"><figcaption><p>Design Gurus, 2023a</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt="" width="375"><figcaption><p>Design Gurus, 2023a</p></figcaption></figure>
 
 
 

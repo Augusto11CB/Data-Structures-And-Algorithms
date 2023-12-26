@@ -19,7 +19,7 @@
    2. A HEAP can be used to figure out here an element must be inserted.
 5. **Affinity Queue**: In an affinity queue, each element possesses an affinity. Elements with the same affinity are placed together, while those without matching affinities are positioned at the rear of the queue.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Design Gurus, 2023a</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Font: Design Gurus, 2023a</p></figcaption></figure>
 
 ### Simple Queue - Operations
 
@@ -36,7 +36,7 @@
 
 #### Queue Time Complexity Operations Summary
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Design Gurus, 2023a</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Font: Design Gurus, 2023a</p></figcaption></figure>
 
 ### Simple Queue - Implementation
 
@@ -143,7 +143,7 @@ public class Solution {
 
 
 
-    <figure><img src="../.gitbook/assets/image (2).png" alt="" width="375"><figcaption><p>Educative.io, 2023a</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (2) (1).png" alt="" width="375"><figcaption><p>Font: Educative.io, 2023a</p></figcaption></figure>
 * The dequeue operation (Educative.io, 2023a):
   * If it is empty, then it will display `"Queue is empty"`.&#x20;
   * If the queue is not empty, then check if the queue has only one value (i.e., `front` == `rear`).&#x20;

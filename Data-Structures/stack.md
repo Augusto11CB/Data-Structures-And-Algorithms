@@ -24,7 +24,7 @@ Stacks in data structures operate on the Last-In, First-Out (LIFO) principle. Th
 
 #### Stack Time Complexity Operations Summary
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Design Gurus, 2023a</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Font: Design Gurus, 2023a</p></figcaption></figure>
 
 
 

@@ -7,7 +7,7 @@ Data structures **can be broadly categorized** into:
    * **Linear Data Structures**: In these data structures, data elements **are arranged** sequentially. Examples **include** arrays, linked lists, stacks, and queues.
    * **Non-Linear Data Structures**: Here, data elements **aren’t placed** in a sequence. Examples **are** graphs and trees.
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>DESIGN GURUS, 2023</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption><p>DESIGN GURUS, 2023</p></figcaption></figure>
 
 
 
