@@ -21,6 +21,7 @@
   * [Queue](Data-Structures/queue.md)
   * [Tree](Data-Structures/tree/README.md)
     * [Binary Search Tree (BTS)](Data-Structures/tree/binary-search-tree-bts.md)
+  * [Linked List](Data-Structures/linked-list.md)
   * [Heap](Data-Structures/Heap/README.md)
 * [Materials From Universities and Colleges](Extra-Materials-Design-Analysis-of-Algorithms/README.md)
   * [Solving-and-Finding-Recurrences](Extra-Materials-Design-Analysis-of-Algorithms/Solving-and-Finding-Recurrences/README.md)

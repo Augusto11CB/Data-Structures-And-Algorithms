@@ -21,6 +21,8 @@
 
 <figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Font: Design Gurus, 2023a</p></figcaption></figure>
 
+
+
 ### Simple Queue - Operations
 
 #### **Enqueue Operation**:
@@ -37,6 +39,8 @@
 #### Queue Time Complexity Operations Summary
 
 <figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Font: Design Gurus, 2023a</p></figcaption></figure>
+
+
 
 ### Simple Queue - Implementation
 
@@ -131,7 +135,7 @@ public class Solution {
 
 ```
 
-###
+
 
 ### Circular Queue - Operations
 
@@ -394,6 +398,8 @@ public class CQueue {
 * **Deque (Double Ended Queue)**, also known as a double-ended queue, is a specialized type of queue that allows for the insertion and removal of elements from both the front and the rear.
 * Unlike a standard queue that adheres strictly to the First-In-First-Out (FIFO) rule, a deque provides greater flexibility in managing elements by allowing operations at both ends.
 
+
+
 ### Deque - Implementation
 
 #### Programiz Implementation (Programiz, 2023b)
@@ -560,6 +566,8 @@ In programming and data structures, queues serve diverse purposes (Design Gurus,
    * In FIFO caching, the oldest item is evicted when the cache reaches its capacity, making room for the insertion of a new item.
 3. :warning: :bulb: **Asynchronous Data Transfer**:
    * Queues find application in scenarios involving **asynchronous** data transfer between two processes.
+
+
 
 ### References <a href="#the-concept-of-a-circular-queue" id="the-concept-of-a-circular-queue"></a>
 
