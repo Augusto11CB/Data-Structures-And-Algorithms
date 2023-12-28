@@ -32,7 +32,8 @@ public class ProblemSolution {
     }
 
        /*
-        Time Complexity: O(3n)
+        Time Complexity: O(2n + m)
+        - where n is the length of the jewels and m is the length of the stones.
 
         Space Complexity: O(n)
 
@@ -61,7 +62,8 @@ public class ProblemSolution {
     }
 
        /*
-        Time Complexity: O(2n)
+        Time Complexity: O(n + m)
+        - where n is the length of the jewels and m is the length of the stones.
 
         Space Complexity: O(n)
         */
