@@ -9,7 +9,7 @@
 
 Load balancers play a crucial role in optimizing system performance and ensuring robustness.&#x20;
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Design Gurus, 2023a</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Font: Design Gurus, 2023a</p></figcaption></figure>
 
 ### How Load Balancer Work?
 

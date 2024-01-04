@@ -24,7 +24,7 @@ A Binary Search Tree (BST) is a type of binary tree where each node can have a m
 
 ### Traversing a Binary Search Tree (BST)
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt="" width="375"><figcaption><p>RAI, 2023</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt="" width="375"><figcaption><p>Font: RAI, 2023</p></figcaption></figure>
 
 
 
