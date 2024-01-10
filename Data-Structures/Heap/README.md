@@ -64,7 +64,7 @@ Priority queues are frequently implemented as binary heap.
 * The time complexity of inserting an element is O(logN).&#x20;
 * The following illustrates how -1 is inserted into a Binary heap by adhering to the steps outlined above.
 
-<figure><img src="../.gitbook/assets/image1.gif" alt=""><figcaption><p>Font: ANGAJALA<em>, 2022</em></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image1.gif" alt=""><figcaption><p>Font: ANGAJALA<em>, 2022</em></p></figcaption></figure>
 
 
 
@@ -239,7 +239,7 @@ public class Solution {
 
 ### Array Time Complexity Operations Summary
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>Font: Design Gurus, 2023a</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption><p>Font: Design Gurus, 2023a</p></figcaption></figure>
 
 
 
