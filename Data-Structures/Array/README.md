@@ -59,7 +59,7 @@ Arrays can be categorized into two types based on their ability to adjust size:
 
 #### Array Time Complexity Operations Summary
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Font: Design Gurus, 2023a</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Font: Design Gurus, 2023a</p></figcaption></figure>
 
 ### Properties
 

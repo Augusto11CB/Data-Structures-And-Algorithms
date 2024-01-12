@@ -27,7 +27,7 @@ In the realms of computer science and data structures, trees are constituted by 
 * Node Depth: the depth of a specific node in the tree is the number of edges **from the root node to that particular node**.
 * Levels in Trees: Levels in a tree are defined based on the distance from the root node. The root node is at level 0; its children are at level 1, and so on.
 
-<figure><img src="../../.gitbook/assets/image.png" alt="" width="563"><figcaption><p>Font: Design Gurus, 2023a</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt="" width="563"><figcaption><p>Font: Design Gurus, 2023a</p></figcaption></figure>
 
 
 
@@ -60,7 +60,7 @@ In the realms of computer science and data structures, trees are constituted by 
 
 * Balanced trees are binary trees where the difference in height between the left and right subtrees of any node in the tree is not more than 1.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Font: Geeks For Geeks, [s.d.]</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Font: Geeks For Geeks, [s.d.]</p></figcaption></figure>
 
 
 

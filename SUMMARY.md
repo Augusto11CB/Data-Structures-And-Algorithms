@@ -27,6 +27,7 @@
   * [Heap](Data-Structures/Heap/README.md)
   * [Graph](Data-Structures/graph/README.md)
     * [Graph Representations](Data-Structures/graph/graph-representations.md)
+    * [Graph Operations](Data-Structures/graph/graph-operations.md)
 * [Materials From Universities and Colleges](extra-materials-design-analysis-of-algorithms/README.md)
   * [Solving-and-Finding-Recurrences](extra-materials-design-analysis-of-algorithms/Solving-and-Finding-Recurrences.md)
   * [Sorting-Searching-Hashing](extra-materials-design-analysis-of-algorithms/Sorting-Searching-Hashing.md)

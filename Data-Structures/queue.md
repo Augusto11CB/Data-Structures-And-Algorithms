@@ -38,7 +38,7 @@
 
 #### Queue Time Complexity Operations Summary
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Font: Design Gurus, 2023a</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Font: Design Gurus, 2023a</p></figcaption></figure>
 
 
 
@@ -147,7 +147,7 @@ public class Solution {
 
 
 
-    <figure><img src="../.gitbook/assets/image (2) (1).png" alt="" width="375"><figcaption><p>Font: Educative.io, 2023a</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt="" width="375"><figcaption><p>Font: Educative.io, 2023a</p></figcaption></figure>
 * The dequeue operation (Educative.io, 2023a):
   * If it is empty, then it will display `"Queue is empty"`.&#x20;
   * If the queue is not empty, then check if the queue has only one value (i.e., `front` == `rear`).&#x20;

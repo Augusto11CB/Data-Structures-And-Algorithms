@@ -9,7 +9,7 @@
   2. Forwards them to the appropriate backend service.
   3. Returns the server’s response to the client.
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt="" width="375"><figcaption><p>Font: Design Gurus, 2023a</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt="" width="375"><figcaption><p>Font: Design Gurus, 2023a</p></figcaption></figure>
 
 
 
