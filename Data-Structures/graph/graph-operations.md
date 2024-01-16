@@ -16,30 +16,10 @@ Graph operations:
 
 
 ```java
-package com.buenosdev.graph.findifpathexist;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-class Pair<T, U> {
-    private T first;
-    private U second;
-
-    public Pair(T first, U second) {
-        this.first = first;
-        this.second = second;
-    }
-
-    public T getFirst() {
-        return first;
-    }
-
-    public U getSecond() {
-        return second;
-    }
-}
 
 public class Graph {
     private Map<Integer, List<Integer>> adjacencyList;
@@ -48,6 +28,11 @@ public class Graph {
         adjacencyList = new HashMap<>();
     }
 
+
+    // Check if node already exists
+    // Use predefined map or dictionary search methods
+    // If not, add it by inserting new key-value pair 
+    // Keep value of the new inserted node as empty list
     public void addNode(int node) {
         if (!adjacencyList.containsKey(node)) {
             adjacencyList.put(node, new ArrayList<>());
@@ -64,9 +49,13 @@ public class Graph {
         }
     }
 
+    // Undirected relationship 
     public void addEdge(int node1, int node2) {
-        adjacencyList.get(node1).add(node2);
-        adjacencyList.get(node2).add(node1);
+        adjacencyList.computeIfAbsent(node1, k -> new ArrayList<>()).add(node2);
+        adjacencyList.computeIfAbsent(node2, k -> new ArrayList<>()).add(node1);
+        
+        //adjacencyList.get(node1).add(node2);
+        //adjacencyList.get(node2).add(node1);
     }
 
     public void removeEdge(int node1, int node2) {
@@ -113,7 +102,34 @@ public class Graph {
         return count / 2;
     }
 
-        public static void main(String[] args) {
+
+}
+
+
+```
+
+```java
+class Pair<T, U> {
+    private T first;
+    private U second;
+
+    public Pair(T first, U second) {
+        this.first = first;
+        this.second = second;
+    }
+
+    public T getFirst() {
+        return first;
+    }
+
+    public U getSecond() {
+        return second;
+    }
+}
+```
+
+```java
+   public static void main(String[] args) {
         Graph graph = new Graph();
         graph.addNode(1);
         graph.addNode(2);
@@ -165,5 +181,4 @@ public class Graph {
         }
         System.out.println();
     }
-}
 ```

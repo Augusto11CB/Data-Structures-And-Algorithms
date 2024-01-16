@@ -31,7 +31,7 @@ For an undirected edge between nodes i and j, the corresponding entries in the m
 
 ### Adjacency list
 
-In linked list representation, an adjacency list is used to store the graph. In an adjacency list, each nodes is associated with a list of its neighboring nodes directly connected to it.
+In linked list representation, an adjacency list is used to store the graph. In an adjacency list, each nodes is associated with a list of its neighbouring nodes directly connected to it.
 
 
 
