@@ -17,6 +17,18 @@
 
 
 
+#### Where DFS is Useful?
+
+**Path Finding**: DFS can be used to find a path between two given vertices u and v.
+
+**To Test if a graph is strongly connected**: DFS can be used to find out whether a graph is strongly connected or not.
+
+* A strongly connected graph is a type of directed graph in which there is a path from each node to every other node,
+
+**Solving puzzles with only one solution**: DFS can be used to find a solution to a puzzle with only one solution, such as a maze or a sudoku.
+
+
+
 #### DFS Pseudo Code
 
 1. **Initialization**: The algorithm starts from a chosen node (source node), and a data structure ((e.g., an array, a hash set or a stack) is created to keep track of visited nodes.
@@ -35,13 +47,13 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 class Graph {
-    private int vertices;
+    private int nodes;
     // Using ArrayList instead of HashMap
     private ArrayList<ArrayList<Integer>> adjList;
     // private Map<Integer, List<Integer>> adjacencyList;
 
     public Graph(int V) {
-        vertices = V;
+        nodes = V;
         adjList = new ArrayList<>(V);
         for (int i = 0; i < V; i++) {
             adjList.add(new ArrayList<>());
@@ -56,7 +68,7 @@ class Graph {
     
 
     public void DFS(int start) {
-        boolean[] visited = new boolean[vertices];
+        boolean[] visited = new boolean[nodes];
         Stack<Integer> s = new Stack<>();
 
         s.push(start);
@@ -102,9 +114,9 @@ class Solution {
 * The time complexity of the Depth-First Search (DFS) algorithm is O(V + E)
   * V: Number of nodes.
   * E: Number of edges.
-* **O(V)**: DFS visits every vertex once and only once. Each visit takes constant time, so the total time spent on visiting all vertices is proportional to the number of vertices, hence O(V).
-* **O(E)**: For each vertex, DFS explores its adjacent vertices by traversing the corresponding edges. Since each edge is also traversed once and only once, the total time spent on traversing all edges is proportional to the number of edges, hence O(E).
-  * "It is the _**for loop**_ in both the recursion verson or the stack version of the DFS algorithm".
+* **O(V)**: DFS visits every node once and only once. Each visit takes constant time, so the total time spent on visiting all nodes is proportional to the number of nodes, hence O(V).
+* **O(E)**: For each node, DFS explores its adjacent nodes by traversing the corresponding edges. Since each edge is also traversed once and only once, the total time spent on traversing all edges is proportional to the number of edges, hence O(E).
+  * "It is the _**for loop**_ in both the recursion version or the stack version of the DFS algorithm".
 
 
 
