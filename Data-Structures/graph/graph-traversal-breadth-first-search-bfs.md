@@ -116,7 +116,7 @@ class Solution {
 #### BFS Space Complexity
 
 * The space required to store the graph using an adjacency list representation is O(V + E) , as we need to store each node and its corresponding edges.
-* The space required for the queue in BFS is O (V) in the worst case, as all the vertices can be in the queue at once.
+* The space required for the queue in BFS is O (V) in the worst case, as all the nodes can be in the queue at once.
 
 
 

@@ -19,7 +19,7 @@
 
 #### Where DFS is Useful?
 
-**Path Finding**: DFS can be used to find a path between two given vertices u and v.
+**Path Finding**: DFS can be used to find a path between two given nodes u and v.
 
 **To Test if a graph is strongly connected**: DFS can be used to find out whether a graph is strongly connected or not.
 
@@ -99,7 +99,7 @@ class Solution {
         g.addEdge(2, 5);
         g.addEdge(2, 6);
 
-        System.out.print("DFS Traversal starting from vertex 0: ");
+        System.out.print("DFS Traversal starting from node 0: ");
         g.DFS(0);
     }
 }
