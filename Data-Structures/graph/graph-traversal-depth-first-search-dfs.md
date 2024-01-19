@@ -108,6 +108,71 @@ class Solution {
 
 
 
+```java
+private void dfs(int[][] isConnected, boolean[] visited, int i) {
+    for (int j = 0; j < isConnected.length; j++) {
+        if (isConnected[i][j] == 1 && !visited[j]) {
+            visited[j] = true;
+            dfs(isConnected, visited, j);  // Recursive DFS call
+        }
+    }
+}
+
+private void dfsRecursionWay(HashSet<Integer> visited, HashMap<Integer, ArrayList<Integer>> graph, int node) {
+        visited.add(node);
+        var neighbours = graph.get(node);
+        if (!neighbours.isEmpty()) {
+            for (int i : neighbours) {
+                if (!visited.contains(i)) {
+                    dfsRecursionWay(visited, graph, i);
+                }
+            }
+        }
+    }
+```
+
+
+
+```java
+private void dfs(int[][] isConnected, boolean[] visited, int start) {
+    int n = isConnected.length;
+    Stack<Integer> stack = new Stack<>();
+    stack.push(start);
+
+    while (!stack.isEmpty()) {
+        int i = stack.pop();
+        visited[i] = true;
+
+        for (int j = 0; j < n; j++) {
+            if (isConnected[i][j] == 1 && !visited[j]) {
+                stack.push(j);
+            }
+        }
+    }
+}
+
+private void dfsIterativeWay(HashSet<Integer> visited, HashMap<Integer, ArrayList<Integer>> graph, int node) {
+        var stack = new Stack<Integer>();
+
+        visited.add(node);
+        stack.add(node);
+
+        while (!stack.empty()) {
+            var current = stack.pop();
+            var adjList = graph.get(current);
+
+            for (Integer neighbour : adjList) {
+                if (!visited.contains(neighbour)) {
+                    visited.add(neighbour);
+                    stack.add(neighbour);
+                }
+            }
+        }
+    }
+```
+
+
+
 #### DFS Time Complexity
 
 * Awesome Explanation :link: [Turin Machines - Time Complexity of Depth First Search (DFS) Algorithm](https://www.youtube.com/watch?v=bP3MWJHeohc).
