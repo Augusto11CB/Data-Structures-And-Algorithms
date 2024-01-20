@@ -1,4 +1,4 @@
-package com.buenosdev.graph.findifpathexist;
+package com.buenosdev.graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;
