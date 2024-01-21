@@ -32,6 +32,7 @@
     * [Graph Operations](Data-Structures/graph/graph-operations.md)
     * [Graph Traversal - Depth First Search (DFS)](Data-Structures/graph/graph-traversal-depth-first-search-dfs.md)
     * [Graph Traversal - Breadth First Search (BFS)](Data-Structures/graph/graph-traversal-breadth-first-search-bfs.md)
+    * [Graph Knowledge to Solve Problems](Data-Structures/graph/graph-knowledge-to-solve-problems.md)
 * [Materials From Universities and Colleges](extra-materials-design-analysis-of-algorithms/README.md)
   * [Solving-and-Finding-Recurrences](extra-materials-design-analysis-of-algorithms/Solving-and-Finding-Recurrences.md)
   * [Sorting-Searching-Hashing](extra-materials-design-analysis-of-algorithms/Sorting-Searching-Hashing.md)
