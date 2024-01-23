@@ -1,4 +1,4 @@
-package com.buenosdev.trie.indexpairsofstring
+package com.buenosdev.trie
 
 class TrieNodeKotlin {
     val children: MutableMap<Char, TrieNodeKotlin> = HashMap()

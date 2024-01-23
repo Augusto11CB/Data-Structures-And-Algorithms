@@ -1,4 +1,4 @@
-package com.buenosdev.trie.indexpairsofstring;
+package com.buenosdev.trie;
 
 class TrieNode {
     TrieNode[] children = new TrieNode[26]; // Children nodes
@@ -15,8 +15,8 @@ class TrieNode {
     }
 }
 
-class Trie {
-    TrieNode root;
+public class Trie {
+    public TrieNode root;
 
     public Trie() {
         root = new TrieNode("");

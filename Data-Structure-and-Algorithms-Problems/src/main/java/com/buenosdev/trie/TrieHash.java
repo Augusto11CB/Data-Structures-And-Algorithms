@@ -1,4 +1,4 @@
-package com.buenosdev.trie.indexpairsofstring;
+package com.buenosdev.trie;
 
 import java.util.HashMap;
 import java.util.Map;

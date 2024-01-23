@@ -1,5 +1,8 @@
 package com.buenosdev.trie.indexpairsofstring;
 
+import com.buenosdev.trie.Trie;
+import com.buenosdev.trie.TrieNode;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
