@@ -3,16 +3,6 @@ package com.buenosdev.trie;
 import java.util.HashMap;
 import java.util.Map;
 
-class TrieNodeHash {
-    Map<Character, TrieNodeHash> children;
-    boolean isEndOfWord; // Flag to represent the end of a word
-
-    public TrieNodeHash() {
-        this.isEndOfWord = false;
-        this.children = new HashMap<>();
-    }
-}
-
 public class TrieHash {
     TrieNodeHash root;
 
