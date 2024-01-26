@@ -12,4 +12,15 @@ public class TrieNodeHash {
         this.children = new TreeMap<>();
     }
 
+    public void insert(String word) {
+        TrieNodeHash node = this;
+        for (Character currentChar : word.toCharArray()) {
+            if (!node.children.containsKey(currentChar)) {
+                node.children.put(currentChar, new TrieNodeHash());
+            }
+            node = node.children.get(currentChar);
+        }
+        node.isEndOfWord = true;
+    }
+
 }
