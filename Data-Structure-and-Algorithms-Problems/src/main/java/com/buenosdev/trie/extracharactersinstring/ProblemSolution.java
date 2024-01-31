@@ -12,6 +12,7 @@ import java.util.Map;
 
 public class ProblemSolution {
 
+    // TODO - Refazer exercício
 
     // (Trie) Problem 2: Extra Characters in a String
 

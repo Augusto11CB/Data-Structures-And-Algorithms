@@ -8,6 +8,7 @@ import java.util.List;
 
 class ProblemSolution {
 
+    // TODO - Refazer exercício
 
     // (Trie) Problem A: Work Break
 
