@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Algorithms](README.md)
+  * [Big O Algorithm Complexity](algorithms/big-o-algorithm-complexity.md)
   * [TEMP](algorithms/temp.md)
   * [Backtracking](Algorithms/Backtracking/README.md)
     * [Maze](algorithms/Backtracking/Maze.md)
@@ -33,6 +34,10 @@
     * [Graph Traversal - Depth First Search (DFS)](Data-Structures/graph/graph-traversal-depth-first-search-dfs.md)
     * [Graph Traversal - Breadth First Search (BFS)](Data-Structures/graph/graph-traversal-breadth-first-search-bfs.md)
     * [Graph Knowledge to Solve Problems](Data-Structures/graph/graph-knowledge-to-solve-problems.md)
+  * [Trie (Prefix Tree)](Data-Structures/trie-prefix-tree/README.md)
+    * [Trie Introduction](Data-Structures/trie-prefix-tree/trie-introduction.md)
+    * [Trie Representations](Data-Structures/trie-prefix-tree/trie-representations.md)
+    * [Trie Operations](Data-Structures/trie-prefix-tree/trie-operations.md)
 * [Materials From Universities and Colleges](extra-materials-design-analysis-of-algorithms/README.md)
   * [Solving-and-Finding-Recurrences](extra-materials-design-analysis-of-algorithms/Solving-and-Finding-Recurrences.md)
   * [Sorting-Searching-Hashing](extra-materials-design-analysis-of-algorithms/Sorting-Searching-Hashing.md)

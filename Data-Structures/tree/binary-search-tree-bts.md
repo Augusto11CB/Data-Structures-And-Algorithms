@@ -6,7 +6,7 @@ A Binary Search Tree (BST) is a type of binary tree where each node can have a m
 
 #### Properties and Application of BST
 
-* **Quick Searches**: BSTs provide fast searching capabilities with an average time complexity of `O(log n)` for balanced trees. This makes them suitable for applications that require quick data retrieval based on a key, such as database indexing and dictionary implementations.
+* **Quick Searches**: BSTs provide fast searching capabilities with an average **Time Complexity** of `O(log n)` for balanced trees. This makes them suitable for applications that require quick data retrieval based on a key, such as database indexing and dictionary implementations.
 * **Ordered Data**: BSTs keep data in order. They are useful when you need to keep things sorted or get them in a certain order.
 * **BSTs in Databases**: Databases leverage BSTs to create indexes, which speed up data retrieval based on specific fields. This allows databases to efficiently manage large datasets and complex queries.
 * **BSTs in File Systems**: File systems use BSTs to organize directory structures. This aligns well with the hierarchical structure of directories, leading to efficient file retrieval.
@@ -51,7 +51,7 @@ public void inOrder() {
 
 
 
-#### Pre-order Traversal <a href="#2.-pre-order-traversal" id="2.-pre-order-traversal"></a>
+#### Pre-order Traversal <a href="#id-2.-pre-order-traversal" id="id-2.-pre-order-traversal"></a>
 
 * current node -> the left subtree -> right subtree.
 
@@ -72,7 +72,7 @@ public void preOrder() {
 
 
 
-#### &#x20;Post-order Traversal <a href="#3.-post-order-traversal" id="3.-post-order-traversal"></a>
+#### &#x20;Post-order Traversal <a href="#id-3.-post-order-traversal" id="id-3.-post-order-traversal"></a>
 
 * the left subtree -> the right subtree -> current node.
 
@@ -209,7 +209,7 @@ public boolean search(T value) {
 
 ### Time and Space Complexity of Binary Search Trees (BST)
 
-#### Best Case Time Complexity for Searching - O(log n)
+#### Best Case Time Complexity for Searching - `O(log n)`
 
 * The best-case time complexity for searching in a BST occurs when the tree is balanced.
 * In a balanced BST, each level approximately halves the search space.
@@ -217,20 +217,20 @@ public boolean search(T value) {
 
 
 
-#### Worst Case Time Complexity for Searching - O(n) (for unbalanced trees) <a href="#worst-case-time-complexity-for-searching-o-n-for-unbalanced-trees" id="worst-case-time-complexity-for-searching-o-n-for-unbalanced-trees"></a>
+#### Worst Case Time Complexity for Searching - `O(n)` (for unbalanced trees) <a href="#worst-case-time-complexity-for-searching-o-n-for-unbalanced-trees" id="worst-case-time-complexity-for-searching-o-n-for-unbalanced-trees"></a>
 
 * The worst-case time complexity for searching occurs when the tree is completely unbalanced, resembling a linked list. In this scenario, each node has only one child, and the search becomes linear, requiring `O(n)` operations to traverse through all nodes in the BST.
 
 
 
-#### Best Case Time Complexity for Insertion/Deletion - O(log n)
+#### Best Case Time Complexity for Insertion/Deletion - `O(log n)`
 
 * In a balanced BST, each level approximately halves the search space.
 * As a result, the time complexity for searching is logarithmic `O(log n)` with respect to the number of nodes (n) in the BST.
 
 
 
-#### Worst Case Time Complexity for Insertion/Deletion - O(n) (for unbalanced trees)
+#### Worst Case Time Complexity for Insertion/Deletion - `O(n)` (for unbalanced trees)
 
 * The worst-case time complexity for searching in a BST occurs when the tree is completely unbalanced ("linked list").
 * In this scenario, each node has only one child, and the search becomes linear, requiring `O(n)` operations to traverse through all nodes in the BST.
@@ -242,14 +242,14 @@ public boolean search(T value) {
 1. **Unbalanced BSTs**:
    * Unbalanced BSTs occur when elements are inserted in a specific order, leading to poor tree structure.
    * If elements are inserted in a **sorted or nearly sorted order**, the BST can degenerate into a **linked list**.
-   * Unbalanced BSTs result in **poor time complexities** for search, insertion, and deletion operations, approaching **linear time (O(n))** instead of the optimal **logarithmic time (O(log n))**.
+   * Unbalanced BSTs result in **poor time complexities** for search, insertion, and deletion operations, approaching **linear time (`O(n)`)** instead of the optimal **logarithmic time (`O(log n)`)**.
 2. **Degenerate Trees**:
    * Degenerate trees are extreme cases of unbalanced BSTs where each node has only one child.
    * These trees essentially form a **linked list**, resulting in **very poor time complexities** for all operations.
    * The advantages of using BSTs are **negated** in such cases.
 3. **Performance Issues**:
    * Unbalanced and degenerate BSTs lead to significantly **degraded performance** for common operations.
-   * In the worst-case scenario (when the tree is degenerate), operations can take **linear time (O(n))**.
+   * In the worst-case scenario (when the tree is degenerate), operations can take **linear time (`O(n)`)**.
    * This undermines the primary benefit of using a BST.
 4. **Complex Balancing**:
    * Ensuring a BST remains balanced after insertion and deletion requires **complex balancing algorithms**.

@@ -25,7 +25,7 @@ For an undirected edge between nodes i and j, the corresponding entries in the m
 
 #### Adjacency Matrix for Directed Graphs <a href="#adjacency-matrix-for-undirected-graphs" id="adjacency-matrix-for-undirected-graphs"></a>
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Font:  Design Guru, 2023a</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Font:  Design Guru, 2023a</p></figcaption></figure>
 
 
 
@@ -43,7 +43,7 @@ In linked list representation, an adjacency list is used to store the graph. In 
 
 #### Representing Directed Graphs Using Adjacency List <a href="#representing-directed-graphs-using-adjacency-list" id="representing-directed-graphs-using-adjacency-list"></a>
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Font:  Design Guru, 2023a</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Font:  Design Guru, 2023a</p></figcaption></figure>
 
 
 

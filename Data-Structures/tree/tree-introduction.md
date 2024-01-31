@@ -60,7 +60,7 @@ In the realms of computer science and data structures, trees are constituted by 
 
 * Balanced trees are binary trees where the difference in height between the left and right subtrees of any node in the tree is not more than 1.
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Font: Geeks For Geeks, [s.d.]</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Font: Geeks For Geeks, [s.d.]</p></figcaption></figure>
 
 
 
