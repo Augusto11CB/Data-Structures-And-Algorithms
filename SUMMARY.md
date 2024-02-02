@@ -10,6 +10,7 @@
     * [Insertion Sort Algorithm](algorithms/Sorting-Algorithms/InsertionSort.md)
     * [Mergesort Algorithm](algorithms/Sorting-Algorithms/MergeSort.md)
   * [Greedy-Algorithms](algorithms/Greedy-Algorithms/README.md)
+    * [Greedy Algorithms Introduction](algorithms/Greedy-Algorithms/greedy-algorithms-introduction.md)
     * [Dijkstra’s Algorithm](algorithms/Greedy-Algorithms/Dijkstras-Algorithm.md)
     * [Job Sequencing Problem and Scheduling Priority Tasks](algorithms/Greedy-Algorithms/Job-Sequencing-Problem-and-Scheduling-Priority-Tasks.md)
   * [Search-Algorithms](algorithms/Search-Algorithms/README.md)
