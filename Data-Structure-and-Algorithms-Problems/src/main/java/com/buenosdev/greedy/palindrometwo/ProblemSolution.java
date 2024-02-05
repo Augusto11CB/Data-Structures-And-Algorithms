@@ -9,6 +9,52 @@ public class ProblemSolution {
 
     /*
      * */
+
+    public boolean validPalindrome(String str) {
+        var j = str.length() - 1;
+        var i = 0;
+
+        var leftSb = new StringBuilder();
+        var rightSb = new StringBuilder();
+        var flag = true;
+
+        while (i < j) {
+            leftSb.append(str.charAt(i));
+            rightSb.append(str.charAt(j));
+
+            if (leftSb.compareTo(rightSb) == 0) {
+                i++;
+                j--;
+                continue;
+            }
+
+            if (flag) {
+                rightSb.deleteCharAt(rightSb.length() - 1);
+                rightSb.append(str.charAt(j - 1));
+                if (leftSb.compareTo(rightSb) == 0) {
+                    i++;
+                    j--;
+                    flag = false;
+                    continue;
+                }
+
+                rightSb.deleteCharAt(rightSb.length() - 1);
+                rightSb.append(str.charAt(j));
+                leftSb.deleteCharAt(leftSb.length() - 1);
+                leftSb.append(str.charAt(i + 1));
+                if (leftSb.compareTo(rightSb) != 0) {
+                    break;
+                } else {
+                    i++;
+                    j--;
+                    flag = false;
+                }
+            }
+        }
+
+        return leftSb.compareTo(rightSb) == 0;
+    }
+
     public static boolean isPalindromePossible(String str) {
         var auxStr = str;
         var reverseAux = new StringBuilder(auxStr).reverse().toString();
@@ -19,10 +65,17 @@ public class ProblemSolution {
             auxStr = str.replace(String.valueOf(str.charAt(i)), "");
 
             reverseAux = new StringBuilder(auxStr).reverse().toString();
-            if (auxStr.equals(reverseAux))
-                return true;
+            if (auxStr.equals(reverseAux)) return true;
         }
 
         return false;
+    }
+
+
+    public static void main(String[] args) {
+        var sol = new ProblemSolution();
+        System.out.println(sol.validPalindrome("deeee")); // true
+        System.out.println(sol.validPalindrome("abccdba")); // true
+        System.out.println(sol.validPalindrome("abcdef"));  // false
     }
 }
