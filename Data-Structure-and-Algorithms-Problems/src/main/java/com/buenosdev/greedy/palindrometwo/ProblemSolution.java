@@ -14,6 +14,35 @@ public class ProblemSolution {
         var j = str.length() - 1;
         var i = 0;
 
+        while (i < j) {
+            if (str.charAt(i) != str.charAt(j)) {
+                var leftResult = isPalindrome(str, i + 1, j);
+                var rightResult = isPalindrome(str, i, j - 1);
+                return rightResult || leftResult;
+            } else {
+                i++;
+                j--;
+            }
+        }
+        return true;
+    }
+
+    private boolean isPalindrome(String str, int i, int j) {
+        while (i < j) {
+            if (str.charAt(i) == str.charAt(j)) {
+                i++;
+                j--;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean validPalindromeFailed(String str) {
+        var j = str.length() - 1;
+        var i = 0;
+
         var leftSb = new StringBuilder();
         var rightSb = new StringBuilder();
         var flag = true;
