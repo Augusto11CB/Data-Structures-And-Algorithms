@@ -31,6 +31,15 @@ public class ProblemSolution {
             }
         }
 
+        if (leftCounter > rightCounter) {
+            for (int i = sb.length() - 1; i >= 0; i--) {
+                if (sb.charAt(i) == '(' && leftCounter > rightCounter) {
+                    sb.deleteCharAt(i);
+                    leftCounter = leftCounter - 1;
+                }
+            }
+        }
+
         return sb.toString();
 
     }
