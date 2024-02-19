@@ -12,6 +12,41 @@ public class ProblemSolution {
 
     /*
      * */
+
+    public String removeDuplicateLettersA(String s) {
+        var sArray = s.toCharArray();
+        var countLastCharIndexOccurrence = new HashMap<Character, Integer>(); // count is going to store the last indice that a character appeared
+        var present = new HashSet<Character>(); // present is going to indicate if the character is part of the answer.
+        var result = new Stack<Character>();
+
+        // Get the last position that Character appeared
+        for (int i = 0; i < sArray.length; i++) {
+            countLastCharIndexOccurrence.put(sArray[i], i);
+        }
+
+        for (int i = 0; i < sArray.length; i++) {
+
+
+            if (!present.contains(sArray[i])) {
+                // if currentChar is 'smaller' that the last char added in the result AND
+                // if the last char added in the result is going to appear later in the sArray
+                // Then we are going to remove the last char added in order to add the currentchar in the result to guarantee the smallest in lexicographical order.
+                while (!result.empty() && sArray[i] < result.peek() && countLastCharIndexOccurrence.get(result.peek()) > i) {
+                    present.remove(result.pop());
+                }
+
+                result.add(sArray[i]);
+                present.add(sArray[i]);
+            }
+        }
+
+        var sb = new StringBuilder();
+        while (!result.empty()) {
+            sb.insert(0, result.pop());
+        }
+        return sb.toString();
+    }
+
     public String removeDuplicateLetters(String s) {
         HashMap<Character, Integer> count = new HashMap<>();
         HashSet<Character> present = new HashSet<>();
@@ -57,8 +92,7 @@ public class ProblemSolution {
     public static void main(String[] args) {
         var sol = new ProblemSolution();
 
-        sol.removeDuplicateLetters("cbacdcbc");
+        sol.removeDuplicateLettersA("cbacdcbc");
     }
-
 
 }
