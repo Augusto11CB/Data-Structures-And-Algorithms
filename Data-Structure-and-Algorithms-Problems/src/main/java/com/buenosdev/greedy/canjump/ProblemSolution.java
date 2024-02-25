@@ -10,7 +10,38 @@ public class ProblemSolution {
 
     /*
      * */
+
+// ############################################
+//    [ 2, 3, 1, 1, 4 ]
+//              cp, lp
+//
+//    cp = current position
+//    lp = goal
+// ############################################
+//    current position + maximum jump >= goal
+//    = 3 + 1 >= 4
+//    = true
+// ############################################
+//    [ 2,  3,  1,  1,  4 ]
+//              cp, lp
+// ############################################
     public boolean canJump(int[] nums) {
+        var lastP = nums.length - 1;
+
+        for (int i = nums.length - 2; i >= 0; i--) {
+            var currentP = nums[i];
+            if(currentP + i >= lastP) lastP = i;
+        }
+
+        return lastP == 0;
+    }
+
+    // Time complexity: O(n)
+    // Space complexity: O(1)
+
+
+
+    public boolean canJumpV2(int[] nums) {
 
         int currentIndex = 0;
 
