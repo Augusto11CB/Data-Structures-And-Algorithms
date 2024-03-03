@@ -1,4 +1,4 @@
-package com.buenosdev.hash;
+package com.buenosdev.hash.twosum;
 
 import java.util.HashMap;
 
