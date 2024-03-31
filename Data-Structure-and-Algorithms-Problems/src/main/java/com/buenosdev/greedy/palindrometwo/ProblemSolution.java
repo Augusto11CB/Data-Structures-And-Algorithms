@@ -28,6 +28,7 @@ public class ProblemSolution {
     }
 
     private boolean isPalindrome(String str, int i, int j) {
+        // abca
         while (i < j) {
             if (str.charAt(i) == str.charAt(j)) {
                 i++;
