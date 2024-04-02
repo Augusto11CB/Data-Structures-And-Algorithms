@@ -14,6 +14,68 @@ class ProblemSolution {
      * */
 
     public int numRescueBoats(int[] people, int limit) {
+        Arrays.sort(people);
+        int i = 0;
+        int j = people.length - 1;
+        int result = 0; // Count of boats
+
+        while (i < j) {
+            if (people[i] + people[j] <= limit) {
+                i++;
+            }
+            j--;
+            result++;
+        }
+
+        // When last person is left.
+        if (i == j) {
+            result++;
+        }
+        return result;
+    }
+
+    public int numRescueBoatsFailedTwo(int[] people, int limit) {
+        var result = 0;
+
+        Arrays.sort(people);
+
+        var i = 1;
+        var j = people.length - 2;
+        var left = people[0];
+        var right = people[people.length - 1];
+        while (i < j) {
+            if (left + right == limit) {
+                result = result + 1;
+                left = people[i];
+                right = people[j];
+                i = i + 1;
+                j = j - 1;
+            }
+            if (left + right > limit) {
+                result = result + 1;
+                right = people[j];
+                j = j - 1;
+            } else {
+                left = left + people[i];
+                i = i + 1;
+            }
+        }
+
+        if (people.length == 2) {
+            if (left + right == limit) return 1;
+            else return 2;
+        }
+
+        if (people.length < 2) return 1;
+
+        if (j == i) {
+            result = result + 1;
+        }
+
+        return result;
+    }
+
+    public int numRescueBoatsFailed(int[] people, int limit) {
         var result = 0;
         Arrays.sort(people);
 
@@ -43,12 +105,12 @@ class ProblemSolution {
         int[] people = {10, 55, 70, 20, 90, 85};
         int limit = 100;
 
-//        int result = solution.numRescueBoats(people, limit);
-//        System.out.println("Minimum number of boats required: " + result);
+        int result = solution.numRescueBoats(people, limit);
+        System.out.println("Minimum number of boats required: " + result);
         // Expected output: "Minimum number of boats required: 2"
 
-        int[] people2 = {5,1,4,2};
-        int limit2 = 6;
+        int[] people2 = {1, 2};
+        int limit2 = 3;
 
         int result2 = solution.numRescueBoats(people2, limit2);
         System.out.println("Minimum number of boats required: " + result2);
