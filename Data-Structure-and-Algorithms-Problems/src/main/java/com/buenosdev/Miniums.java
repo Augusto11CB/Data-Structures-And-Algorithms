@@ -8,6 +8,14 @@ import java.util.List;
 import java.util.Set;
 
 class Miniums {
+
+    // This is the final solution that I was developing during the interview, but could not finish;
+    // The time complexity as I explained during the meeting is O(n²) in the worst case;
+    
+    // Thank you for the opportunity!
+    
+    // PS: No AI tools were used in the development of this code.
+
     public List<Integer> miroMiniumQuestion(String command, int d, List<Integer> m) {
 
         var miniums = new ArrayList<Integer>(m);
