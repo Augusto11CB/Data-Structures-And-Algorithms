@@ -4,13 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-class Miniums{
+class Miniums {
     public List<Integer> miroMiniumQuestion(String command, int d, List<Integer> m) {
-        
+
         var miniums = new ArrayList<Integer>(m);
         var takenPositions = new HashMap<Integer, Set<Integer>>();
         var ar = new int[command.length()];
@@ -30,18 +29,18 @@ class Miniums{
 
         // this hashset keeps track of the positions with more than one minium;
         var collision = new HashSet<Integer>();
-        
+
         // this HashSet tells wich minium should change position
         var changeDirection = new HashSet<Integer>();
         while (d > 0) {
             checkIfChangeDirection(changeDirection, collision, takenPositions);
-            
+
             for (int minium = 0; minium < miniums.size(); minium++) {
                 if (changeDirection.contains(minium)) {
                     ar[minium] = ar[minium] * -1;
                     changeDirection.remove(minium);
 
-                } 
+                }
                 // remove from the takenPositions map the miniums position before the 'jump';
                 var oldPosition = miniums.get(minium);
                 var positionOld = takenPositions.getOrDefault(oldPosition, new HashSet<>());
@@ -56,7 +55,7 @@ class Miniums{
                 takenPositions.put(jump, positionJ);
                 miniums.set(minium, jump);
 
-                
+
                 // if more than one minium is in position, mark as collision
                 if (positionJ.size() > 1)
                     collision.add(jump);
@@ -73,5 +72,28 @@ class Miniums{
             changeDirection.addAll(takenPositions.get(idCollision));
         }
 
+    }
+
+    public static void main(String[] args) {
+        var obj = new Miniums();
+        List<Integer> test1 = Arrays.asList(1, 3, 6);
+        List<Integer> result1 = obj.miroMiniumQuestion("RLL", 2, test1);
+        System.out.println("Test 1 Result: " + result1); 
+
+        List<Integer> test2 = Arrays.asList(1, 3, 6);
+        List<Integer> result2 = obj.miroMiniumQuestion("RRR", 2, test2);
+        System.out.println("Test 2 Result: " + result2); 
+
+        List<Integer> test3 = Arrays.asList(0, 1, 2);
+        List<Integer> result3 = obj.miroMiniumQuestion("LRL", 3, test3);
+        System.out.println("Test 3 Result: " + result3); 
+
+        List<Integer> test4 = Arrays.asList(0, 0, 0);
+        List<Integer> result4 = obj.miroMiniumQuestion("RRR", 1, test4);
+        System.out.println("Test 4 Result: " + result4);
+
+        List<Integer> test5 = Arrays.asList(0, 2, 4);
+        List<Integer> result5 = obj.miroMiniumQuestion("RLR", 2, test5);
+        System.out.println("Test 5 Result: " + result5);
     }
 }
