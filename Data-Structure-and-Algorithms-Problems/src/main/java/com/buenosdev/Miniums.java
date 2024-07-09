@@ -78,22 +78,22 @@ class Miniums {
         var obj = new Miniums();
         List<Integer> test1 = Arrays.asList(1, 3, 6);
         List<Integer> result1 = obj.miroMiniumQuestion("RLL", 2, test1);
-        System.out.println("Test 1 Result: " + result1); // Expected: [2, 3, 4]
+        System.out.println("Test 1 Result: " + result1); // Test 1 Result: [1, 3, 4]
 
         List<Integer> test2 = Arrays.asList(1, 3, 6);
         List<Integer> result2 = obj.miroMiniumQuestion("RRR", 2, test2);
-        System.out.println("Test 2 Result: " + result2); // Expected: [1, 3, 1]
+        System.out.println("Test 2 Result: " + result2); // Test 2 Result: [3, 5, 8]
 
         List<Integer> test3 = Arrays.asList(0, 1, 2);
         List<Integer> result3 = obj.miroMiniumQuestion("LRL", 3, test3);
-        System.out.println("Test 3 Result: " + result3); // Expected: [-1, 0, 1]
+        System.out.println("Test 3 Result: " + result3);  // Test 3 Result: [-3, 4, -1]
 
         List<Integer> test4 = Arrays.asList(0, 0, 0);
         List<Integer> result4 = obj.miroMiniumQuestion("RRR", 1, test4);
-        System.out.println("Test 4 Result: " + result4); // Expected: [1, 1, 1]
+        System.out.println("Test 4 Result: " + result4); // Test 4 Result: [1, 1, 1]
 
         List<Integer> test5 = Arrays.asList(0, 2, 4);
         List<Integer> result5 = obj.miroMiniumQuestion("RLR", 2, test5);
-        System.out.println("Test 5 Result: " + result5); // Expected: [1, 1, 5]
+        System.out.println("Test 5 Result: " + result5); // Test 5 Result: [0, 2, 6]
     }
 }
