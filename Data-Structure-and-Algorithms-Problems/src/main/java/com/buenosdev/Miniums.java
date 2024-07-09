@@ -67,4 +67,11 @@ class Miniums{
         }
         return miniums;
     }
+
+    private void checkIfChangeDirection(HashSet<Integer> changeDirection, HashSet<Integer> collision, HashMap<Integer, Set<Integer>> takenPositions) {
+        for (int idCollision : collision) {
+            changeDirection.addAll(takenPositions.get(idCollision));
+        }
+
+    }
 }
