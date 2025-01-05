@@ -1,0 +1,12 @@
+
+†	java:S112("FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$08346e90-780d-4e36-8e9e-3fa7697ccb41
+†	java:S112+"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$d939ab29-dd57-4781-9ff7-49f7ecece718
+
+java:S3008"QRename this field "LOGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆÃÁıJ$d02f24b7-baa7-404a-b13d-553d1688debc
+­
+java:S1130"qRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from constructor's body.(ÀªÃ‹J$de8bdf1f-220b-4783-9680-87ab906e28a8
+v	java:S125"<This block of commented-out lines of code should be removed.(™‹ŞJ$c9e23917-a20b-491d-8feb-7dbd100ad2c8
+”
+java:S2139&"XEither log this exception and handle it, or rethrow it with some contextual information.(‹±ÃÆJ$8c63925d-61ff-4a6f-8885-12537ebbbfb2
+”
+java:S2139)"XEither log this exception and handle it, or rethrow it with some contextual information.(ï­£ÄJ$1b946f0a-5e1e-4bdd-977d-1c66c10c7535

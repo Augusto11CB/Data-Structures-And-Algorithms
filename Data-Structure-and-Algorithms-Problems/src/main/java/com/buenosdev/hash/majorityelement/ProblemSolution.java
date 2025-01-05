@@ -6,6 +6,11 @@ import java.util.Objects;
 import java.util.PriorityQueue;
 
 public class ProblemSolution {
+
+    /*
+    * https://leetcode.com/problems/majority-element/
+    * */
+
     public int majorityElement(int[] nums) {
         var hashControl = new HashMap<Integer, Integer>();
 

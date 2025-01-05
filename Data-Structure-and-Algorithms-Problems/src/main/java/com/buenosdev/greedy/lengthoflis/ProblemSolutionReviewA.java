@@ -10,6 +10,7 @@ public class ProblemSolutionReviewA {
 
     public static void main(String[] args) {
         var ps = new ProblemSolutionReviewA();
+        ps.lengthOfLIS(new int[]{10, 9, 2, 5, 3, 7, 101, 18});
     }
 
     public int lengthOfLIS(int[] nums) {

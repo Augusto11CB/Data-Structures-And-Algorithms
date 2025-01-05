@@ -1,5 +1,6 @@
 package com.buenosdev.greedy.removekdigits;
 
+
 import java.util.Stack;
 
 public class ProblemSolution {
@@ -9,8 +10,8 @@ public class ProblemSolution {
     * */
 
     public static void main(String[] args) {
-        var ps = new ProblemSolution();
-        System.out.println(ps.removeKdigits("1432219", 3));
+        var ps = new ProblemSolutionKt();
+        System.out.println(ps.removeKdigits("10200", 1));
     }
 
     public String removeKdigits(String num, int k) {

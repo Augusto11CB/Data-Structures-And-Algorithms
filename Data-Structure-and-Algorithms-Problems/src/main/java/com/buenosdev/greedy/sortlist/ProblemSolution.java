@@ -36,7 +36,7 @@ public class ProblemSolution {
 
     private ListNode merge(ListNode listOne, ListNode listTwo) {
         ListNode aux = new ListNode(0);
-        ListNode movingPointer = aux;
+        ListNode movingPointer = aux; // in order to not move aux and lost the reference to the ''head''
 
         while (listOne != null && listTwo != null) {
             // Compare values from each list and append the smaller one

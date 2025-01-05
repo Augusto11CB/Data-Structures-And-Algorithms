@@ -33,11 +33,12 @@ class ProblemSolution {
 
     public static void main(String[] args) {
         // Test cases
+        var s = new Solution();
         System.out.println(simplifyPathV2("/a//b////c/d//././/..")); // Expected output: "/a/b/c"
         System.out.println(simplifyPathV2("/../")); // Expected output: "/"
         System.out.println(simplifyPathV2("/.")); // Expected output: "/"
         System.out.println(simplifyPathV2("/../")); // Expected output: "/"
-        System.out.println(simplifyPathV2("/home//foo/")); // Expected output: "/home/foo"
+        System.out.println(s.simplifyPathFAILED("/../")); // Expected output: "/home/foo"
     }
 
 

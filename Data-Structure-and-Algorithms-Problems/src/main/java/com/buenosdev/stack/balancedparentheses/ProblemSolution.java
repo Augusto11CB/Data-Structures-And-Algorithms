@@ -29,7 +29,7 @@ class ProblemSolution {
     Explanation: The parentheses in this string are not balanced. Here, ')' does not have a matching opening parenthesis '(', and similarly, ']' does not have a matching opening bracket '['. So the function should return false.
      * */
     public static void main(String[] args) {
-        ProblemSolution bp = new ProblemSolution();
+        ProblemSolutionReviewA bp = new ProblemSolutionReviewA();
 
         // Test cases to verify the solution
         String test1 = "{[()]}";
