@@ -1,4 +1,4 @@
-# Java LeetCode Quick Reference — V2 Draft
+# Java LeetCode Quick Reference — Draft
 
 > A personal, LeetCode-submission-focused reference based on the patterns used
 > most often in this repository: greedy, trie, stack, queue, tree, heap, hash,
@@ -687,4 +687,3 @@ private int firstTrue(int low, int high) {
   at an endpoint overlap for this problem.
 - For recursive DFS/backtracking, verify that input depth will not overflow the
   Java call stack; use an explicit stack when necessary.
-
