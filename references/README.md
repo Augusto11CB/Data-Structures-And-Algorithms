@@ -1,4 +1,4 @@
-# Quick References
+# References
 
 Concise, language-specific cheat sheets for solving data-structure and
 algorithm problems.

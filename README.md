@@ -7,7 +7,7 @@ Personal study material and practice solutions for data structures and algorithm
 - [Theory](theory/README.md) — curated explanations, implementations used for illustration, and reference material.
 - [Practice](practice/README.md) — executable problem solutions, organized by topic rather than by the platform that supplied a problem.
 - [Courses](courses/README.md) — notes, assignments, and material retained in their original course context.
-- [Quick references](quick-reference/README.md) — concise language-specific algorithm cheat sheets.
+- [References](references/README.md) — concise language-specific algorithm cheat sheets.
 
 ## Finding a practice problem
 
