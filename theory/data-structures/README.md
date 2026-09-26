@@ -4,3 +4,4 @@
 - [Heaps](Heap/)
 - [Graphs](graphs/)
 - [Trees](trees/)
+- [Tries](tries/)
