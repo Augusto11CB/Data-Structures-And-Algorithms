@@ -1,1 +1,5 @@
-# [Data-Structures](https://sixth-gibbon-10e.notion.site/Data-Structure-1acc24808b1540c79e6a3cbe71498364)
+# Data structures
+
+- [Arrays](Array/)
+- [Heaps](Heap/)
+- [Graphs](graphs/)
