@@ -25,6 +25,9 @@
 .idea/**/dbnavigator.xml
 
 # Gradle
+.gradle/
+build/
+.kotlin/
 .idea/**/gradle.xml
 .idea/**/libraries
 
@@ -513,6 +516,8 @@ fabric.properties
 
 # Package Files #
 *.jar
+# The Gradle wrapper JAR is intentionally committed.
+!gradle/wrapper/gradle-wrapper.jar
 *.war
 *.nar
 *.ear
@@ -523,4 +528,3 @@ fabric.properties
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
-
