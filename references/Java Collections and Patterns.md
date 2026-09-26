@@ -15,7 +15,9 @@ import java.util.*;
 | Fast membership / de-duplication | `HashSet<T>` | `add`, `contains`, `remove` |
 | Sorted keys and frequencies | `TreeMap<K, V>` | `firstKey`, `firstEntry` |
 | Dynamic indexed values | `ArrayList<T>` | `add`, `get`, `set` |
-| Stack, queue, or deque | `ArrayDeque<T>` | `push`, `pop`, `offer`, `poll` |
+| Stack (LIFO) | `ArrayDeque<T>` | `push`, `pop`, `peek` |
+| Queue (FIFO) | `ArrayDeque<T>` | `offer`, `poll`, `peek` |
+| Deque (both ends) | `ArrayDeque<T>` | `offerFirst` / `offerLast`, `pollFirst` / `pollLast` |
 | Smallest/largest item repeatedly | `PriorityQueue<T>` | `offer`, `poll`, `peek` |
 | Mutable string / DFS path | `StringBuilder` | `append`, `deleteCharAt`, `setLength` |
 
