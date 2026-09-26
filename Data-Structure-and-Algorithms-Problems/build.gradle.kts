@@ -12,8 +12,13 @@ repositories {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    // Compile with the Java 27 toolchain while retaining the newest JVM target
+    // supported by Kotlin 2.4.20 for mixed Java/Kotlin output.
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(27)
+    }
 }
 
 kotlin {
@@ -28,7 +33,7 @@ kotlin {
     }
 
     compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_25)
     }
 }
 

@@ -1,6 +1,6 @@
 # Data Structures and Algorithms Problems
 
-This project uses Gradle with Kotlin/JVM support. Java and Kotlin sources currently live under `src/main/java` and are compiled together.
+This project uses Gradle with Kotlin/JVM support, using a Java 27 toolchain and Kotlin 2.4.20. The mixed Java/Kotlin bytecode target is JVM 25, the newest target exposed by Kotlin 2.4.20. Java and Kotlin sources currently live under `src/main/java` and are compiled together.
 
 ## IntelliJ IDEA
 
