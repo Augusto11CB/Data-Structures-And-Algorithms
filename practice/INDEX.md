@@ -35,3 +35,4 @@ Add entries here as problems are created or reviewed.
 | Problem | Topic | Source | Implementations | Last reviewed |
 | --- | --- | --- | --- | --- |
 | Two Sum | Hash tables and sets | [LeetCode](https://leetcode.com/problems/two-sum/description/) | [`ProblemSolution.java`](src/main/java/com/buenosdev/hash/twosum/ProblemSolution.java), [`Review2026_09_26.java`](src/main/java/com/buenosdev/hash/twosum/Review2026_09_26.java) | 2026-09-26 |
+| Valid Anagram | Hash tables and sets | [LeetCode](https://leetcode.com/problems/valid-anagram/description/) | [`ProblemSolution.java`](src/main/java/com/buenosdev/workspace/ProblemSolution.java), [`Review2026_09_27.java`](src/main/java/com/buenosdev/hash/validanagram/Review2026_09_27.java) | 2026-09 |
