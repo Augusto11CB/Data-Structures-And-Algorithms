@@ -9,14 +9,16 @@ Create a new dated review implementation for one existing practice problem. This
 
 ## Inputs
 
-Obtain or infer the problem name and its existing package directory. If the requested problem is ambiguous, ask which existing package to use. Preserve the repository's existing language, package, and naming conventions.
+Obtain or infer the problem name, topic, and canonical package directory. Practice problems use the structure `topic/exercise-name`, for example `hash/validanagram`. Preserve the repository's existing language, package, and naming conventions.
+
+Do not treat `workspace` (or another generic scratch package) as a canonical problem directory. If an older implementation exists only there, leave it intact and create the review in the appropriate topic/exercise package.
 
 ## Workflow
 
-1. Locate the existing problem directory under `practice/src/main/java/`. Do not create a second directory for a problem that is already present under a different spelling.
+1. Locate the canonical problem directory under `practice/src/main/java/<base-package>/<topic>/<exercise-name>/`. Infer the topic from the exercise when it is clear, using existing topic directories and their naming conventions. Do not create a second directory for a problem that is already present under a different spelling. A generic `workspace` package is an exception: it is not a problem directory and must not be used for a review.
 2. Determine the review date in the repository user's local date and name the new file `ReviewYYYY_MM_DD.java`. If that exact filename already exists, do not overwrite it: ask whether to amend it or use a new, explicitly selected date.
-3. Add the file beside the original solution. Match the package declaration used by neighboring Java files. Create a public class with the matching `ReviewYYYY_MM_DD` name and a short comment identifying the problem and review date. Leave the implementation ready for the learner to write; do not copy an older solution unless the user asks for a reference implementation.
-4. Update `practice/INDEX.md` rather than creating per-problem Markdown files. Find the existing row for the same problem and append the review marker `YYYY-MM` (or the repository's established equivalent) to its **Implementations** field, then update **Last reviewed** to `YYYY-MM`. Preserve all other metadata and table formatting.
+3. Add the file in the canonical topic/exercise package. Match the package declaration used by neighboring Java files. Create a public class with the matching `ReviewYYYY_MM_DD` name and a short comment identifying the problem and review date. Leave the implementation ready for the learner to write; do not copy an older solution unless the user asks for a reference implementation.
+4. Update `practice/INDEX.md` rather than creating per-problem Markdown files. Find the existing row for the same problem and append the review marker `YYYY-MM` (or the repository's established equivalent) to its **Implementations** field, then update **Last reviewed** to `YYYY-MM`. Preserve all other metadata and table formatting. If a legacy original remains in a generic scratch package, retain its link and link the new review in its canonical topic/exercise package.
 5. If the problem has no index row, add one in the relevant topic section using only known metadata. Link its problem name directly to the package directory or the original Java solution, consistently with the existing index. Mark source metadata as unknown rather than guessing.
 
 ## Guardrails
@@ -28,7 +30,7 @@ Obtain or infer the problem name and its existing package directory. If the requ
 
 ## Verify
 
-Before finishing, check that the Java filename and public class name agree, the package declaration matches the directory convention, the new review appears beside the original solution, and the index has exactly one corresponding updated or added row. Run the repository's focused Java build or formatter if it is available and does not require unrelated setup.
+Before finishing, check that the Java filename and public class name agree, the package declaration matches the `topic/exercise-name` directory convention, the new review is not in a generic scratch package, and the index has exactly one corresponding updated or added row. Run the repository's focused Java build or formatter if it is available and does not require unrelated setup.
 
 ## Portable installation
 
